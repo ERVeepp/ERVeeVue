@@ -1,32 +1,21 @@
 <template lang="html">
     <div>
-        我是页面2
-        <div>{{obj.js}}</div>
+      <ul>
+        <li v-for="item in content" v-if="item.show">
+          <p>{{item.con.text}}</p>
+        </li>
+      </ul>
     </div>
 </template>
 
 <script>
-    export default{
-        data(){
-            return {
-                obj:''
-            };
-        },
-        mounted:function(){
-            var vm=this;
-            this.$http.post('http://localhost:3000/my', {}, {
-				headers: {},
-				emulateJSON: true
-			}).then(function(response) {
-				// 这里是处理正确的回调
-				this.obj = response.data
-				// this.articles = response.data["subjects"] 也可以
-			}, function(response) {
-				// 这里是处理错误的回调
-				console.log(response)
-			});
-        }
+export default{
+  computed: {
+    content () {
+      return this.$store.state.content.content
     }
+  }
+}
 </script>
 
 <style lang="css">

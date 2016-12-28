@@ -8,5 +8,19 @@
   <body>
     <div id="app"></div>
     <script src="/dist/build.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+      $.ajax({
+        type:'post',
+        url:'http://localhost:3000/my',
+        headers:{
+            "Conten-Type":"http://localhost:3000/my"
+        },
+        success:function (backDate) {
+            // body...
+            console.log(backDate);
+        }
+      })
+		</script>
   </body>
 </html>

@@ -18,7 +18,8 @@ import Element from 'element-ui';
 import 'element-ui/lib/theme-default/index.css';
 //加载element
 Vue.use(Element);
-
+//引入store
+import store from '../../store';
 
 Vue.config.debug = true;
 
@@ -26,6 +27,7 @@ import nav from './components/nav.vue';
 import slidebar from './components/slidebar.vue';
 import banner from './components/banner.vue';
 import footer from './components/footer.vue';
+import home from './components/home.vue';
 import sign from './components/sign.vue';
 import a from './components/a.vue';
 import b from './components/b.vue';
@@ -34,6 +36,7 @@ import d from './components/d.vue';
 import e from './components/e.vue';
 import f from './components/f.vue';
 import g from './components/g.vue';
+import register from './components/register.vue';
 
 const router = new VueRouter({
     mode: 'history',
@@ -46,7 +49,7 @@ const router = new VueRouter({
         	nav:nav,
         	slidebar:slidebar,
         	footer:footer,
-        	body:sign
+        	body:home
         }
     },
     {
@@ -110,19 +113,30 @@ const router = new VueRouter({
         }
     },
     {
-        path: '/g',
+        path: '/sign',
         components:{
         	banner: banner,
         	nav:nav,
         	slidebar:slidebar,
         	footer:footer,
-        	body:g
+        	body:sign
+        }
+    },
+    {
+        path: '/register',
+        components:{
+          banner: banner,
+          nav:nav,
+          slidebar:slidebar,
+          footer:footer,
+          body:register
         }
     }]
 });
 
 new Vue({
   	el: '#app',
+    store,
   	router: router,
   	template:`
   	<div id="app">
@@ -151,12 +165,15 @@ new Vue({
 	}
 	a{
 		text-decoration: none;
+    color:#666;
 	}
 	a:hover{
 		text-decoration: none;
+    color:#666;
 	}
 	a:active{
-		color:#000;
+    text-decoration: none;
+		color:#666;
 	}
 	.fl{
 		float:left;

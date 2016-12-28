@@ -1,16 +1,46 @@
 <template lang="html">
 	<div class="banner">
-		我是banner
+		<div class="langcheckbox">
+			<span class="langcheck"
+				v-for="(item,index) in content"
+				@click="changelang(item,index)"
+			>{{item.lang}}</span>
+		</div>
 	</div>
 </template>
 <script>
-
+export default{
+  computed: {
+    content () {
+      return this.$store.state.content.content
+    }
+  },
+	methods:{
+		changelang:function(item,index){
+			//此处调用action，改变lang的状态
+		}
+	}
+}
 
 </script>
 <style>
-	.banner-box{
+	.banner{
 		width:100%;
 		height:100px;
-		background: #ccc;
+		background:#20A0FF;
+		position: relative;
+	}
+	.langcheckbox{
+		position: absolute;
+		right:0;
+		top:0;
+	}
+	.langcheck{
+		padding:0 5px;
+		cursor: pointer;
+		color:#fff;
+	}
+	.langcheck:hover{
+		color:#666;
 	}
 </style>
