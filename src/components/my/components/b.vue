@@ -1,19 +1,25 @@
 <template lang="html">
     <div>
         我是页面2
+        <div>{{obj.js}}</div>
     </div>
 </template>
 
 <script>
     export default{
+        data(){
+            return {
+                obj:''
+            };
+        },
         mounted:function(){
+            var vm=this;
             this.$http.post('http://localhost:3000/my', {}, {
 				headers: {},
 				emulateJSON: true
 			}).then(function(response) {
-                console.log(response)
 				// 这里是处理正确的回调
-				//this.articles = response.data.subjects
+				this.obj = response.data
 				// this.articles = response.data["subjects"] 也可以
 			}, function(response) {
 				// 这里是处理错误的回调
