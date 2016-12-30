@@ -1,6 +1,6 @@
 <template lang="html">
     <div>
-    	我是页面5
+    	{{obj}}
     </div>
 </template>
 
@@ -9,7 +9,7 @@ import Vue from 'vue';
 export default {
     data(){
         return {
-            obj:"hellod"
+            obj:"我是页面5"
         }
     }
 }

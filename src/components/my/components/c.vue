@@ -21,6 +21,7 @@ export default {
             emulateJSON: true
         }).then(function(response) {
             // 这里是处理正确的回调
+            console.log(response.data)
             this.obj = response.data
                 // this.articles = response.data["subjects"] 也可以
         }, function(response) {
