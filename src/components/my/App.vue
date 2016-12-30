@@ -1,3 +1,15 @@
+<template lang="html">
+
+</template>
+
+<script>
+export default {
+}
+</script>
+
+<style lang="css">
+</style>
+
 <script>
 import Vue from 'vue'
 //调用vue路由模块
@@ -23,10 +35,10 @@ import store from '../../store';
 
 Vue.config.debug = true;
 
-import nav from './components/nav.vue';
-import slidebar from './components/slidebar.vue';
-import banner from './components/banner.vue';
-import footer from './components/footer.vue';
+import mynav from './components/nav.vue';
+import myslidebar from './components/slidebar.vue';
+import mybanner from './components/banner.vue';
+import myfooter from './components/footer.vue';
 import home from './components/home.vue';
 import sign from './components/sign.vue';
 import a from './components/a.vue';
@@ -45,90 +57,54 @@ const router = new VueRouter({
         path: '/',
         name:'home',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:home
         }
     },
     {
         path: '/a',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:a
         }
     },
     {
         path: '/b',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:b
         }
     },
     {
         path: '/c',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:c
         }
     },
     {
         path: '/d',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:d
         }
     },
     {
         path: '/e',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:e
         }
     },
     {
         path: '/f',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:f
         }
     },
     {
         path: '/sign',
         components:{
-        	banner: banner,
-        	nav:nav,
-        	slidebar:slidebar,
-        	footer:footer,
         	body:sign
         }
     },
     {
         path: '/register',
         components:{
-          banner: banner,
-          nav:nav,
-          slidebar:slidebar,
-          footer:footer,
           body:register
         }
     }]
@@ -140,13 +116,19 @@ new Vue({
   	router: router,
   	template:`
   	<div id="app">
-  		<router-view class="view" name="slidebar"></router-view>
-		<router-view class="view" name="banner"></router-view>
-		<router-view class="view" name="nav"></router-view>
-		<router-view class="view body" name="body"></router-view>
-		<router-view class="view" name="footer"></router-view>
+        <mybanner></mybanner>
+        <mynav></mynav>
+        <myslidebar></myslidebar>
+        <router-view class="view body" name="body"></router-view>
+        <myfooter></myfooter>
 	</div>
-  	`
+  	`,
+    components:{
+        mybanner,
+        mynav,
+        myslidebar,
+        myfooter
+    }
 });
 
 </script>
