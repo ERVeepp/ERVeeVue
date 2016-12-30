@@ -1,3 +1,12 @@
+<template lang="html">
+    <div id="app">
+        <mybanner></mybanner>
+        <mynav></mynav>
+        <myslidebar></myslidebar>
+        <router-view class="view body" name="body"></router-view>
+        <myfooter></myfooter>
+	</div>
+</template>
 <script>
 import Vue from 'vue'
 //调用vue路由模块
@@ -29,16 +38,6 @@ import mybanner from './components/banner.vue';
 import myfooter from './components/footer.vue';
 import home from './components/home.vue';
 import sign from './components/sign.vue';
-/*
-import register from './components/register.vue';
-import a from './components/a.vue';
-import b from './components/b.vue';
-import c from './components/c.vue';
-import d from './components/d.vue';
-import e from './components/e.vue';
-import f from './components/f.vue';
-import g from './components/g.vue';
-*/
 const register = r => require.ensure([], () => r(require('./components/register.vue')), 'chunk')
 const a = r => require.ensure([], () => r(require('./components/a.vue')), 'chunk')
 const b = r => require.ensure([], () => r(require('./components/b.vue')), 'chunk')
@@ -109,7 +108,7 @@ const router = new VueRouter({
 });
 
 new Vue({
-  	el: '#app',
+    el:'#app',
     store,
   	router,
   	template:`
