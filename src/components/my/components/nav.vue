@@ -22,8 +22,8 @@
 			<el-menu-item index="f">
 				<router-link to="/f">f</router-link>
 			</el-menu-item>
-			<el-menu-item index="sign">
-				<router-link to="/sign">登陆</router-link>
+			<el-menu-item index="g">
+				<router-link to="/g">g</router-link>
 			</el-menu-item>
 		</el-menu>
 	</div>

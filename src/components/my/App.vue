@@ -20,15 +20,17 @@ import 'element-ui/lib/theme-default/index.css';
 Vue.use(Element);
 //引入store
 import store from '../../store';
-
+//
 Vue.config.debug = true;
-
+//引入组件
 import mynav from './components/nav.vue';
 import myslidebar from './components/slidebar.vue';
 import mybanner from './components/banner.vue';
 import myfooter from './components/footer.vue';
 import home from './components/home.vue';
 import sign from './components/sign.vue';
+/*
+import register from './components/register.vue';
 import a from './components/a.vue';
 import b from './components/b.vue';
 import c from './components/c.vue';
@@ -36,8 +38,16 @@ import d from './components/d.vue';
 import e from './components/e.vue';
 import f from './components/f.vue';
 import g from './components/g.vue';
-import register from './components/register.vue';
-
+*/
+const register = r => require.ensure([], () => r(require('./components/register.vue')), 'chunk')
+const a = r => require.ensure([], () => r(require('./components/a.vue')), 'chunk')
+const b = r => require.ensure([], () => r(require('./components/b.vue')), 'chunk')
+const c = r => require.ensure([], () => r(require('./components/c.vue')), 'chunk')
+const d = r => require.ensure([], () => r(require('./components/d.vue')), 'chunk')
+const e = r => require.ensure([], () => r(require('./components/e.vue')), 'chunk')
+const f = r => require.ensure([], () => r(require('./components/f.vue')), 'chunk')
+const g = r => require.ensure([], () => r(require('./components/g.vue')), 'chunk')
+//
 const router = new VueRouter({
     mode: 'history',
     base: __dirname,
@@ -45,7 +55,7 @@ const router = new VueRouter({
         path: '/',
         name:'home',
         components:{
-        	body:home
+        	body:sign
         }
     },
     {
@@ -85,9 +95,9 @@ const router = new VueRouter({
         }
     },
     {
-        path: '/sign',
+        path: '/g',
         components:{
-        	body:sign
+        	body:g
         }
     },
     {
@@ -101,7 +111,7 @@ const router = new VueRouter({
 new Vue({
   	el: '#app',
     store,
-  	router: router,
+  	router,
   	template:`
   	<div id="app">
         <mybanner></mybanner>
