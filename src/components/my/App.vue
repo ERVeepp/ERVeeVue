@@ -1,15 +1,3 @@
-<template lang="html">
-
-</template>
-
-<script>
-export default {
-}
-</script>
-
-<style lang="css">
-</style>
-
 <script>
 import Vue from 'vue'
 //调用vue路由模块
@@ -130,7 +118,6 @@ new Vue({
         myfooter
     }
 });
-
 </script>
 <style media="screen">
     html,body{
