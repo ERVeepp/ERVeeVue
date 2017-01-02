@@ -12,7 +12,7 @@
 export default{
   computed: {
     content () {
-      return this.$store.state.content.content
+      return this.$store.state.state.content
     }
   }
 }

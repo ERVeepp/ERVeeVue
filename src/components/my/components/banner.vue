@@ -9,12 +9,13 @@
 	</div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 //引入store
 import store from '../../../store'
 export default{
   computed: {
     content () {
-      return this.$store.state.content.content
+      return this.$store.state.state.content
     }
   },
 	methods:{

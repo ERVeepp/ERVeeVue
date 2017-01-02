@@ -1,5 +1,6 @@
 export default {
   state:{
+    count:0,
     content:[{
       lang:"中文",
       show:true,
