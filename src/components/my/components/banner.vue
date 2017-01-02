@@ -9,6 +9,8 @@
 	</div>
 </template>
 <script>
+//引入store
+import store from '../../../store'
 export default{
   computed: {
     content () {
@@ -18,6 +20,7 @@ export default{
 	methods:{
 		changelang:function(item,index){
 			//此处调用action，改变lang的状态
+			this.$store.dispatch('increment', item)
 		}
 	}
 }
