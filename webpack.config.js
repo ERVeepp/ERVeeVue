@@ -24,13 +24,11 @@ module.exports = {
               // other vue-loader options go here
             }
         },
-        //js
         {
             test: /\.js$/,
             loader: 'babel-loader',
             exclude: /node_modules/
         },
-        //图片
         {
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'file-loader',
@@ -44,7 +42,7 @@ module.exports = {
         },
         {
             test: /\.scss$/,
-            loaders: ["style-loader", "css-loader", "sass-loader"]
+            loaders: ["style-loader","css-loader","sass-loader"]
         },
     	{
 		    test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,

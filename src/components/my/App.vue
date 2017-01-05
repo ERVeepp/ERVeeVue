@@ -1,50 +1,47 @@
+<template lang="html">
+    <div id="app">
+
+	</div>
+</template>
 <script>
 import Vue from 'vue'
 //调用vue路由模块
-import VueRouter from "vue-router";
+import VueRouter from "vue-router"
 //加载路由
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 //调用vuex模块
-import Vuex from 'vuex';
+import Vuex from 'vuex'
 //加载vuex
-Vue.use(Vuex);
+Vue.use(Vuex)
 //调用vue的ajax模块
-import VueResource from 'vue-resource';
+import VueResource from 'vue-resource'
 //加载ajax
-Vue.use(VueResource);
+Vue.use(VueResource)
 //调用element-ui模块
-import Element from 'element-ui';
+import Element from 'element-ui'
 //加载element动画样式
-import 'element-ui/lib/theme-default/index.css';
+import 'element-ui/lib/theme-default/index.css'
 //加载element
-Vue.use(Element);
+Vue.use(Element)
 //引入store
-import store from '../../store';
+import store from '../../store'
 //
-Vue.config.debug = true;
+Vue.config.debug = true
 //引入组件
-import mynav from './components/nav.vue';
-import myslidebar from './components/slidebar.vue';
-import mybanner from './components/banner.vue';
-import myfooter from './components/footer.vue';
-import home from './components/home.vue';
-import sign from './components/sign.vue';
-import register from './components/register.vue';
-import a from './components/a.vue';
-import b from './components/b.vue';
-import c from './components/c.vue';
-import d from './components/d.vue';
-import e from './components/e.vue';
-import f from './components/f.vue';
-import g from './components/g.vue';
-/*const register = resolve => require(['./components/register.vue'], resolve)
-const a = resolve => require(['./components/a.vue'], resolve)
-const b = resolve => require(['./components/b.vue'], resolve)
-const c = resolve => require(['./components/c.vue'], resolve)
-const d = resolve => require(['./components/d.vue'], resolve)
-const e = resolve => require(['./components/e.vue'], resolve)
-const f = resolve => require(['./components/f.vue'], resolve)
-const g = resolve => require(['./components/g.vue'], resolve)*/
+import mynav from './components/nav.vue'
+import myslidebar from './components/slidebar.vue'
+import mybanner from './components/banner.vue'
+import myfooter from './components/footer.vue'
+import home from './components/home.vue'
+import sign from './components/sign.vue'
+import register from './components/register.vue'
+import a from './components/a.vue'
+import b from './components/b.vue'
+import c from './components/c.vue'
+import d from './components/d.vue'
+import e from './components/e.vue'
+import f from './components/f.vue'
+import g from './components/g.vue'
 //
 const router = new VueRouter({
     mode: 'history',
@@ -104,7 +101,7 @@ const router = new VueRouter({
           body:register
         }
     }]
-});
+})
 
 new Vue({
     el:'#app',
@@ -125,60 +122,22 @@ new Vue({
         myslidebar,
         myfooter
     }
-});
+})
 </script>
-<style media="screen">
-    html,body{
-		width:100%;
-		height:100%;
-		font-family: "微软雅黑";
-	}
-	html{
-		font-size: 62.5%;
-	}
-	body{
-		margin:0;
-		font-size: 1rem;
-	}
-	a{
-		text-decoration: none;
-    color:#666;
-	}
-	a:hover{
-		text-decoration: none;
-    color:#666;
-	}
-	a:active{
-    text-decoration: none;
-		color:#666;
-	}
-	.fl{
-		float:left;
-	}
-	.fr{
-		float:right;
-	}
-	#app{
-		width:100%;
-		height:100%;
-		background:#f5f5f5;
-	}
-	.body{
-		margin:1rem auto;
-	}
-	@media only screen and (min-width: 100px) and (max-width: 640px) {
-		.body{
-			width:100%;
-		}
-	}
-	@media only screen and (min-width: 640px) and (max-width: 980px) {
-		.body{
-			width:80%;
-		}
-	}
-	@media only screen and (min-width: 980px) {
-		.body{
-			width:80%;
-		}
-	}
+<style lang="scss">
+    $bgcolor:#f5f5f5;
+    $color:#666;
+    html{
+        font:{
+            size:62.5%;
+            family:fantasy;
+        }
+        body{
+            background:{
+                color:$bgcolor;
+            };
+            size:1rem;
+            color:$color;
+        }
+    }
 </style>
