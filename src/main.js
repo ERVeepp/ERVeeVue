@@ -36,7 +36,7 @@ Vue.use(Element);*/
 //import App from './components/demo/base.vue'
 
 //my
-//import './css/base.scss'
+import './css/base.scss'
 import App from './components/my/App.vue'
 
 //vuex

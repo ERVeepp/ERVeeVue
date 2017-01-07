@@ -1,6 +1,209 @@
+//变量
+//背景颜色
 $bgcolor:#f5f5f5;
+//行高
+$baseLineHeight:1.4 !default;
+//字体颜色
+$color:#666;
+//栅格个数
+$size:24;
+//屏幕尺寸
+$size-l:1200px;
+$size-m:980px;
+$size-s:560px;
+//
+*{
+    box-sizing: border-box;
+}
 html{
-    body{
-        background: $bgcolor;
+    font:{
+        family:Microsoft Yahei;
+        size: 62.5%;
     }
+    & body{
+        font:{
+            size:1.4rem;
+        };
+        margin:0;
+        background: $bgcolor;
+        line-height: $baseLineHeight;
+        color:$color;
+    }
+}
+//a标签
+a{
+    color:$color;
+    text-decoration: none;
+    :hover{
+        color:$color;
+    }
+    :active{
+        color:$color;
+    }
+}
+//块元素
+.db{
+    display: block;
+    img{
+        width:100%;
+        height:auto;
+    }
+}
+//浮动
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+//字体颜色
+.cf{
+    color:#fff;
+    a{
+        color:#fff;
+    }
+}
+.c0{
+    color:#000;
+    a{
+        color:#000;
+    }
+}
+//cursor
+.cp{
+    cursor: pointer;
+}
+//clearfix
+@mixin clearfix($selector) {
+    #{$selector}:before {
+        clear: both;
+      	height:0;
+      	display: block;
+      	overflow: hidden;
+      	content: "我是清除浮动";
+    }
+}
+@include clearfix(".clearfix");
+//flex
+@mixin flex($selector) {
+    .flex-#{$selector}{
+    	display: flex;
+    	justify-content:#{$selector};
+    	align-items: center;
+    	flex-direction:row;
+    	flex-wrap: wrap;
+    }
+}
+@include flex("flex-start");
+@include flex("center");
+@include flex("flex-end");
+//text
+@mixin text($selector) {
+    .text-#{$selector}{
+        text-align:#{$selector};
+    }
+}
+@include text("center");
+@include text("left");
+@include text("right");
+//backgroundimg
+.bgimg{
+    min-width:100%;
+    min-height:100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@for $i from 1 through 100 {
+    //fz-x-px
+    .fz-#{$i}px {
+        font-size:#{$i}px;
+    }
+    //fz-x-px
+    .fz-#{$i}em {
+        font-size:#{$i}em;
+    }
+    //p-x-px
+    .p-#{$i}px {
+        padding:#{$i}px;
+    }
+    //p-x-em
+    .p-#{$i}em {
+        padding:#{$i}em;
+    }
+}
+//container
+.container{
+    width:100%;
+    //@media
+    @for $i from 1 through $size {
+        .col-auto-#{$i}{
+            width:(100%/$size)*$i;
+        }
+        @media (min-width:$size-l) {
+            .col-xl-#{$i}{
+                width:(100%/$size)*$i;
+            }
+        }
+        @media screen and (min-width:$size-m) and (max-width:$size-l) {
+            .col-l-#{$i}{
+                width:(100%/$size)*$i;
+            }
+        }
+        @media screen and (min-width:$size-s) and (max-width:$size-m) {
+            .col-m-#{$i}{
+                width:(100%/$size)*$i;
+            }
+        }
+        @media screen and (max-width:$size-s) {
+            .col-s-#{$i}{
+                width:(100%/$size)*$i;
+            }
+        }
+    }
+}
+//移动端隐藏
+@media screen and (max-width:$size-s) {
+    .phone-hidden{
+        display:none;
+    }
+}
+//自定义滚动条
+@mixin scrollbar($selector) {
+    #{$selector}{
+        //滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样）等
+        ::-webkit-scrollbar{
+            width:1px;
+        }
+        //滚动条两端的按钮。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果
+        ::-webkit-scrollbar-button{
+            display:none;
+        }
+        //外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果
+        ::-webkit-scrollbar-track{
+            display:none;
+        }
+        //内层轨道，滚动条中间部分（除去）
+        ::-webkit-scrollbar-track-piece{
+
+        }
+        //滚动条里面可以拖动的那部分
+        ::-webkit-scrollbar-thumb{
+
+        }
+        //边角
+        ::-webkit-scrollbar-corner{
+            display:none;
+        }
+        //定义右下角拖动块的样式
+        ::-webkit-resizer{
+            display:none;
+        }
+    }
+}
+@include scrollbar("html");
+//自定义鼠标样式
+.cursorurl{
+    cursor:url('/src/img/thislogo.png'), default;
 }

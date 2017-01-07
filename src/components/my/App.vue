@@ -125,19 +125,5 @@ new Vue({
 })
 </script>
 <style lang="scss">
-    $bgcolor:#f5f5f5;
-    $color:#666;
-    html{
-        font:{
-            size:62.5%;
-            family:fantasy;
-        }
-        body{
-            background:{
-                color:$bgcolor;
-            };
-            size:1rem;
-            color:$color;
-        }
-    }
+    
 </style>
