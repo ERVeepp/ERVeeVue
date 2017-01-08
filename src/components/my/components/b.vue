@@ -1,20 +1,33 @@
 <template lang="html">
     <div>
       <ul>
-        <li v-for="item in content" v-if="item.show">
-          <p>{{item.con.text}}</p>
-        </li>
+        <li>{{lang}}</li>
       </ul>
     </div>
 </template>
-
 <script>
+import { mapGetters } from 'vuex'
 export default{
-  computed: {
-    content () {
-      return this.$store.state.state.content
+    data(){
+        var lang=localStorage.getItem("lang")
+        return{
+            lang:lang
+        }
+    },
+    computed: {
+        content () {
+            let actlang=0
+            let contents=this.$store.state.state.contents
+            for (var i = 0; i < contents.length; i++) {
+                if(contents[i].id==actlang){
+                    //console.log(contents[i])
+                    return contents[i]
+                }
+            }
+            //console.log(store.getters.doneTodos)
+            //return store.getters.state.state.content
+        }
     }
-  }
 }
 </script>
 

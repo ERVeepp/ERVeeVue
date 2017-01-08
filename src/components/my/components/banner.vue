@@ -2,7 +2,7 @@
 	<div class="banner">
 		<div class="langcheckbox">
 			<span class="langcheck"
-				v-for="(item,index) in content"
+				v-for="(item,index) in contents"
 				@click="changelang(item,index)"
 			>{{item.lang}}</span>
 		</div>
@@ -10,18 +10,28 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-//引入store
-import store from '../../../store'
 export default{
   computed: {
-    content () {
-      return this.$store.state.state.content
+    contents () {
+      return this.$store.state.state.contents
     }
   },
 	methods:{
+		...mapActions([
+			'increment'
+			// 映射 this.increment() 为 this.$store.dispatch('increment')
+		]),
+
+		...mapActions({
+			add: 'increment'
+			// 映射 this.add() 为 this.$store.dispatch('increment')
+		}),
 		changelang:function(item,index){
 			//此处调用action，改变lang的状态
-			this.$store.dispatch('increment', item)
+			//this.$store.dispatch('increment')
+			//此处调用mutations
+			//store.commit('increment')
+			this.increment(item.id)
 		}
 	}
 }

@@ -24,7 +24,8 @@ import 'element-ui/lib/theme-default/index.css'
 //加载element
 Vue.use(Element)
 //引入store
-import store from '../../store'
+import store from './store'
+//console.log(store)
 //
 Vue.config.debug = true
 //引入组件
@@ -121,9 +122,16 @@ new Vue({
         mynav,
         myslidebar,
         myfooter
+    },
+    mounted:function(){
+        //读取localstorage，假如没值的话,赋值为0，即默认中文
+        let lang=localStorage.getItem("lang")
+        if(!lang){
+            localStorage.setItem("lang","0")
+        }
     }
 })
 </script>
 <style lang="scss">
-    
+
 </style>
