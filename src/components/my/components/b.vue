@@ -16,10 +16,10 @@ export default{
     },
     computed: {
         content () {
-            let actlang=0
+            let choicelang=0
             let contents=this.$store.state.state.contents
             for (var i = 0; i < contents.length; i++) {
-                if(contents[i].id==actlang){
+                if(contents[i].id==choicelang){
                     //console.log(contents[i])
                     return contents[i]
                 }
