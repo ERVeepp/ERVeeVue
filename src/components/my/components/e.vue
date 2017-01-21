@@ -1,16 +1,19 @@
 <template lang="html">
     <div>
-    	{{obj}}
+    	我是页面5
     </div>
 </template>
 
 <script>
-import Vue from 'vue';
-export default {
+import { mapGetters } from 'vuex'
+export default{
     data(){
-        return {
-            obj:"我是页面5"
-        }
+        return{}
+    },
+    computed: {
+        ...mapGetters([
+            'contents'
+        ])
     }
 }
 </script>

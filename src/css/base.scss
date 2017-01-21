@@ -1,33 +1,45 @@
 //变量
 //背景颜色
-$bgcolor:#f5f5f5;
+$bgcolor:#efefef;
 //行高
 $baseLineHeight:1.4 !default;
 //字体颜色
-$color:#666;
+$color:#313131;
 //栅格个数
 $size:24;
+//高度
+$height:100;
 //屏幕尺寸
 $size-l:1200px;
 $size-m:980px;
-$size-s:560px;
+$size-s:760px;
+$size-ss:380px;
 //
 *{
     box-sizing: border-box;
 }
 html{
     font:{
-        family:Microsoft Yahei;
         size: 62.5%;
     }
     & body{
+        scroll-behavior: smooth;
         font:{
             size:1.4rem;
+            //family:Microsoft Yahei;
+            family:Arial;
         };
         margin:0;
         background: $bgcolor;
         line-height: $baseLineHeight;
         color:$color;
+        ul{
+            margin:0;
+            padding:0;
+            li{
+                list-style: none;
+            }
+        }
     }
 }
 //a标签
@@ -49,6 +61,11 @@ a{
         height:auto;
     }
 }
+//行内块元素
+.ib{
+    display: inline-block;
+    margin:0 auto;
+}
 //浮动
 .fl{
     float:left;
@@ -69,13 +86,28 @@ a{
         color:#000;
     }
 }
+.pr{
+    position: relative;
+}
+.pa{
+    position: absolute;
+}
+.ma{
+    margin:0 auto;
+}
 //cursor
 .cp{
     cursor: pointer;
 }
+.usnone{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
 //clearfix
 @mixin clearfix($selector) {
-    #{$selector}:before {
+    #{$selector}:after {
         clear: both;
       	height:0;
       	display: block;
@@ -85,9 +117,24 @@ a{
 }
 @include clearfix(".clearfix");
 //flex
+.flex-column{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content:center;
+    align-items: center;
+    flex-direction:column;
+    flex-wrap: wrap;
+}
 @mixin flex($selector) {
     .flex-#{$selector}{
-    	display: flex;
+        display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox; /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Chrome */
+        display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
     	justify-content:#{$selector};
     	align-items: center;
     	flex-direction:row;
@@ -106,6 +153,9 @@ a{
 @include text("center");
 @include text("left");
 @include text("right");
+.text-blod{
+    font-weight: bold;
+}
 //backgroundimg
 .bgimg{
     min-width:100%;
@@ -120,9 +170,13 @@ a{
     .fz-#{$i}px {
         font-size:#{$i}px;
     }
-    //fz-x-px
+    //fz-x-em
     .fz-#{$i}em {
         font-size:#{$i}em;
+    }
+    //fz-x-rem
+    .fz-#{$i}rem {
+        font-size:#{$i}rem;
     }
     //p-x-px
     .p-#{$i}px {
@@ -132,41 +186,155 @@ a{
     .p-#{$i}em {
         padding:#{$i}em;
     }
+    //p-x-em
+    .p-#{$i}rem {
+        padding:#{$i}rem;
+    }
 }
 //container
 .container{
     width:100%;
-    //@media
-    @for $i from 1 through $size {
-        .col-auto-#{$i}{
-            width:(100%/$size)*$i;
+    overflow: hidden;
+    &:after{
+        clear: both;
+      	height:0;
+      	display: block;
+      	overflow: hidden;
+      	content: "我是清除浮动";
+    }
+}
+//宽度
+@for $i from 1 through $size {
+    .col-auto-#{$i}{
+        width:(100%/$size)*$i;
+        min-height:1px;
+        margin:0 auto;
+    }
+
+    @media (min-width:$size-l) {
+        .col-xl-#{$i}{
+            width:(100%/$size)*$i !important;
+            min-height:1px;
+            margin:0 auto;
         }
-        @media (min-width:$size-l) {
-            .col-xl-#{$i}{
-                width:(100%/$size)*$i;
-            }
+        .col-xl-text-center{
+            text-align: center !important;
         }
-        @media screen and (min-width:$size-m) and (max-width:$size-l) {
-            .col-l-#{$i}{
-                width:(100%/$size)*$i;
-            }
+    }
+
+    @media (max-width:$size-l) {
+        .col-l-#{$i}{
+            width:(100%/$size)*$i !important;
+            min-height:1px;
+            margin:0 auto;
         }
-        @media screen and (min-width:$size-s) and (max-width:$size-m) {
-            .col-m-#{$i}{
-                width:(100%/$size)*$i;
-            }
+        .col-l-text-center{
+            text-align: center !important;
         }
-        @media screen and (max-width:$size-s) {
-            .col-s-#{$i}{
-                width:(100%/$size)*$i;
-            }
+    }
+
+    @media (max-width:$size-m) {
+        .col-m-#{$i}{
+            width:(100%/$size)*$i !important;
+            min-height:1px;
+            margin:0 auto;
+        }
+        .col-m-text-center{
+            text-align: center !important;
+        }
+    }
+
+    @media (max-width:$size-s) {
+        .col-s-#{$i}{
+            width:(100%/$size)*$i !important;
+            min-height:1px;
+            margin:0 auto;
+        }
+        .col-s-text-center{
+            text-align: center !important;
+        }
+    }
+
+    @media (max-width:$size-ss) {
+        .col-ss-#{$i}{
+            width:(100%/$size)*$i !important;
+            min-height:1px;
+            margin:0 auto;
+        }
+        .col-ss-text-center{
+            text-align: center !important;
+        }
+    }
+
+}
+//高度
+@for $i from 0 through $height {
+    .h-auto-#{$i}{
+        height:$i*1%;
+    }
+    @media (min-width:$size-l) {
+        .h-xl-#{$i}{
+            height:$i*1% !important;
+        }
+    }
+    @media (max-width:$size-l) {
+        .h-l-#{$i}{
+            height:$i*1% !important;
+        }
+    }
+    @media (max-width:$size-m) {
+        .h-m-#{$i}{
+            height:$i*1% !important;
+        }
+    }
+    @media (max-width:$size-s) {
+        .h-s-#{$i}{
+            height:$i*1% !important;
+        }
+    }
+    @media (max-width:$size-ss) {
+        .h-ss-#{$i}{
+            height:$i*1% !important;
         }
     }
 }
-//移动端隐藏
-@media screen and (max-width:$size-s) {
-    .phone-hidden{
-        display:none;
+//显示隐藏
+.col-auto-hide{
+    display: none;
+}
+.col-auto-show{
+    display: block;
+}
+@media (min-width:$size-l) {
+    .col-xl-hide{
+        display: none;
+    }
+    .col-xl-show{
+        display: block;
+    }
+}
+@media (min-width:$size-m) and (max-width:$size-l) {
+    .col-l-hide{
+        display: none;
+    }
+    .col-l-show{
+        display: block;
+    }
+}
+@media (min-width:$size-s) and (max-width:$size-m) {
+    .col-m-hide{
+        display: none;
+    }
+    .col-m-show{
+        display: block;
+    }
+}
+@media (max-width:$size-s) {
+    .col-s-hide{
+        display: none;
+    }
+    .col-s-show{
+        display: block;
     }
 }
 //自定义滚动条
@@ -174,7 +342,7 @@ a{
     #{$selector}{
         //滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样）等
         ::-webkit-scrollbar{
-            width:1px;
+            width:0px;
         }
         //滚动条两端的按钮。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果
         ::-webkit-scrollbar-button{
@@ -203,7 +371,58 @@ a{
     }
 }
 @include scrollbar("html");
-//自定义鼠标样式
-.cursorurl{
-    cursor:url('/src/img/thislogo.png'), default;
+//改变大小
+@for $i from 1 through 10 {
+    .scale-auto-#{$i}{
+        -webkit-transform: scale($i/10);
+        -moz-transform: scale($i/10);
+        -ms-transform: scale($i/10);
+        -o-transform: scale($i/10);
+        transform: scale($i/10);
+    }
+    @media (min-width:$size-l) {
+        .scale-xl-#{$i}{
+            -webkit-transform: scale($i/10);
+            -moz-transform: scale($i/10);
+            -ms-transform: scale($i/10);
+            -o-transform: scale($i/10);
+            transform: scale($i/10);
+        }
+    }
+    @media (min-width:$size-m) and (max-width:$size-l) {
+        .scale-l-#{$i}{
+            -webkit-transform: scale($i/10);
+            -moz-transform: scale($i/10);
+            -ms-transform: scale($i/10);
+            -o-transform: scale($i/10);
+            transform: scale($i/10);
+        }
+    }
+    @media (min-width:$size-s) and (max-width:$size-m) {
+        .scale-m-#{$i}{
+            -webkit-transform: scale($i/10);
+            -moz-transform: scale($i/10);
+            -ms-transform: scale($i/10);
+            -o-transform: scale($i/10);
+            transform: scale($i/10);
+        }
+    }
+    @media (max-width:$size-s) {
+        .scale-s-#{$i}{
+            -webkit-transform: scale($i/10);
+            -moz-transform: scale($i/10);
+            -ms-transform: scale($i/10);
+            -o-transform: scale($i/10);
+            transform: scale($i/10);
+        }
+    }
+    @media (max-width:$size-ss) {
+        .scale-ss-#{$i}{
+            -webkit-transform: scale($i/10) !important;
+            -moz-transform: scale($i/10) !important;
+            -ms-transform: scale($i/10) !important;
+            -o-transform: scale($i/10) !important;
+            transform: scale($i/10) !important;
+        }
+    }
 }

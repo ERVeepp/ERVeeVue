@@ -1,36 +1,37 @@
 <template lang="html">
     <div>
         我是页面3
-        <div class="">
-            {{obj.js}}
-        </div>
     </div>
 
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
 export default {
     data() {
         return {
-            obj:{}
+
         }
     },
+    computed: {
+        ...mapGetters([
+            'contents'
+        ])
+    },
     mounted: function() {
-        this.$http.post('http://localhost:3000/my', {}, {
-            headers: {},
-            emulateJSON: true
-        }).then(function(response) {
-            // 这里是处理正确的回调
-            console.log(response.data)
-            this.obj = response.data
-                // this.articles = response.data["subjects"] 也可以
-        }, function(response) {
-            // 这里是处理错误的回调
-            console.log(response)
-        });
-    }
+        axios.post('http://localhost:3000/my', {
+
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 </style>

@@ -5,12 +5,15 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default {
+import { mapGetters } from 'vuex'
+export default{
     data(){
-        return {
-            obj:"hellod"
-        }
+        return{}
+    },
+    computed: {
+        ...mapGetters([
+            'contents'
+        ])
     }
 }
 </script>

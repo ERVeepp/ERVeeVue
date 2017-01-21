@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -33,7 +34,12 @@
 					address: '上海市普陀区金沙江路 1516 弄'
 				}]
 			}
-		}
+		},
+		computed: {
+			...mapGetters([
+	            'contents'
+	        ])
+	  	}
 	}
 </script>
 

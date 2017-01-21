@@ -1,37 +1,45 @@
 <template lang="html">
 	<div class="banner">
 		<div class="langcheckbox">
-			<span class="langcheck"
-				v-for="(item,index) in contents"
-				@click="changelang(item,index)"
+			<span class="langcheck usnone"
+				v-for="(item,index) in state.contents"
+				@click="changelang($event,item,index)"
 			>{{item.lang}}</span>
 		</div>
 	</div>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters , mapActions } from 'vuex'
 export default{
-  computed: {
-    contents () {
-      return this.$store.state.state.contents
-    }
-  },
+  	computed: {
+    	state(){
+      		return this.$store.state
+  		},
+		...mapGetters([
+            'contents'
+        ])
+  	},
 	methods:{
+		/*...mapActions({
+			add: 'increment'
+			// 映射 this.add() 为 this.$store.dispatch('increment')
+		}),*/
 		...mapActions([
 			'increment'
 			// 映射 this.increment() 为 this.$store.dispatch('increment')
 		]),
-
 		...mapActions({
 			add: 'increment'
 			// 映射 this.add() 为 this.$store.dispatch('increment')
 		}),
-		changelang:function(item,index){
+		changelang:function(e,item,index){
 			//此处调用action，改变lang的状态
 			//this.$store.dispatch('increment')
 			//此处调用mutations
 			//store.commit('increment')
 			this.increment(item.id)
+            //手动向父组件触发事件
+            //this.$emit('submitlang',[e,item,index])
 		}
 	}
 }

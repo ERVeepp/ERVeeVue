@@ -1,7 +1,5 @@
 <template lang="html">
-    <div id="app">
-
-	</div>
+    <div id="app"></div>
 </template>
 <script>
 import Vue from 'vue'
@@ -13,10 +11,6 @@ Vue.use(VueRouter)
 import Vuex from 'vuex'
 //加载vuex
 Vue.use(Vuex)
-//调用vue的ajax模块
-import VueResource from 'vue-resource'
-//加载ajax
-Vue.use(VueResource)
 //调用element-ui模块
 import Element from 'element-ui'
 //加载element动画样式
@@ -24,7 +18,7 @@ import 'element-ui/lib/theme-default/index.css'
 //加载element
 Vue.use(Element)
 //引入store
-import store from './store'
+import store from '../../store'
 //console.log(store)
 //
 Vue.config.debug = true
@@ -51,7 +45,7 @@ const router = new VueRouter({
         path: '/',
         name:'home',
         components:{
-        	body:sign
+        	body:home
         }
     },
     {

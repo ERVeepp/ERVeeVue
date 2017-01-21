@@ -1,7 +1,13 @@
 var path = require('path')
 var webpack = require('webpack')
-
+//var ExtractTextPlugin = require("extract-text-webpack-plugin")
+//"extract-text-webpack-plugin": "^1.0.1",
+//"webpack": "^2.1.0-beta.28",
+//"webpack-dev-server": "^2.1.0-beta.9"
 module.exports = {
+    plugins: [
+        //new ExtractTextPlugin("./src/css/styles.css")
+    ],
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -33,12 +39,12 @@ module.exports = {
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]?[hash]'
+              name: '[name].[ext]'
             }
         },
         {
             test: /\.css$/,
-            loader: "style-loader!css-loader"
+            loader: ["style-loader","css-loader"]
         },
         {
             test: /\.scss$/,

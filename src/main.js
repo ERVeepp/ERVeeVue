@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 /*import Vue from 'vue'
 //调用vue路由模块
 import VueRouter from "vue-router";

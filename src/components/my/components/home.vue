@@ -5,13 +5,16 @@
 </template>
 
 <script>
-import Vue from 'vue';
-export default {
-    data(){
-        return {
-            obj:"hellod"
-        }
-    }
+import { mapGetters } from 'vuex'
+export default{
+  	computed: {
+		...mapGetters([
+            'contents'
+        ])
+  	},
+	methods:{
+
+	}
 }
 </script>
 

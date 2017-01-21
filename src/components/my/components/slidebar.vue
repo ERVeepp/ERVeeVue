@@ -1,10 +1,20 @@
 <template>
 	<div class="slidebar">
-		
+
 	</div>
 </template>
 <script>
-	
+import { mapGetters } from 'vuex'
+export default{
+  	computed: {
+		...mapGetters([
+            'contents'
+        ])
+  	},
+	methods:{
+
+	}
+}	
 </script>
 <style>
 	.slidebar{
