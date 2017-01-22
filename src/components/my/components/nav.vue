@@ -1,31 +1,13 @@
 <template lang="html">
-	<div class="nav">
-		<el-menu themes="dark" default-active="1" class="el-menu-demo"  mode="horizontal" @select="handleSelect">
-		  <el-menu-item index="/">
-				<router-link to="/">{{contents.nav.home}}</router-link>
-			</el-menu-item>
-		  <el-menu-item index="a">
-				<router-link to="/a">{{contents.nav.a}}</router-link>
-			</el-menu-item>
-			<el-menu-item index="b">
-				<router-link to="/b">{{contents.nav.b}}</router-link>
-			</el-menu-item>
-			<el-menu-item index="c">
-				<router-link to="/c">{{contents.nav.c}}</router-link>
-			</el-menu-item>
-			<el-menu-item index="d">
-				<router-link to="/d">{{contents.nav.d}}</router-link>
-			</el-menu-item>
-			<el-menu-item index="e">
-				<router-link to="/e">{{contents.nav.e}}</router-link>
-			</el-menu-item>
-			<el-menu-item index="f">
-				<router-link to="/f">{{contents.nav.f}}</router-link>
-			</el-menu-item>
-			<el-menu-item index="g">
-				<router-link to="/g">{{contents.nav.g}}</router-link>
-			</el-menu-item>
-		</el-menu>
+	<div class="nav container">
+		<div class="col-auto-3 fl navbtn">
+			<router-link to="/">{{contents.nav.home}}</router-link>
+			<div class="navbtnborder"></div>
+		</div>
+		<div class="col-auto-3 fl navbtn">
+			<router-link to="/a">{{contents.nav.a}}</router-link>
+			<div class="navbtnborder"></div>
+		</div>
 	</div>
 </template>
 <script>
@@ -37,22 +19,33 @@ export default {
         ])
   	},
     methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
+      	handleSelect(key, keyPath) {
+        	//console.log(key, keyPath);
+      	}
     }
   }
 </script>
-<style>
+<style lang="scss">
 	.nav{
 		text-align: center;
 		overflow: hidden;
-	}
-	.nav li{
-		width:12.5%;
-	}
-	.nav a{
-		display: block;
-		color:#666;
+		.navbtn{
+			& a{
+				display: block;
+				padding:1rem 0;
+			}
+			&:after{
+				content: "";
+				display: block;
+				margin:0 auto;
+				width:100%;
+				height:3px;
+			}
+			&:hover{
+				&:after{
+					background:#20A0FF;
+				}
+			}
+		}
 	}
 </style>

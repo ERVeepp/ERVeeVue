@@ -14,23 +14,22 @@ export default{
         lang:"English",
         id:0,
         con:{
-            tableData: [{
-                date: '2016-05-02',
-                name: 'aa',
-                address: 'aaaaa'
-            }, {
-                date: '2016-05-04',
-                name: 'bb',
-                address: 'bbbbb'
-            }, {
-                date: '2016-05-01',
-                name: 'cc',
-                address: 'ccccc'
-            }, {
-                date: '2016-05-03',
-                name: 'dd',
-                address: 'dddddd'
-            }]
+            list:{
+                name:{
+                    a:"time",
+                    b:"name",
+                    c:"down"
+                },
+                tableData: [{
+                    date: '2016-05-02'
+                }, {
+                    date: '2016-05-04'
+                }, {
+                    date: '2016-05-01'
+                }, {
+                    date: '2016-05-03'
+                }]
+            }
         }
 
     },{
@@ -47,15 +46,18 @@ export default{
         lang:"中文",
         id:1,
         con:{
-            tableData: [{
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1517 弄'
-            }]
+            list:{
+                name:{
+                    a:"时间",
+                    b:"姓名",
+                    c:"地址"
+                },
+                tableData: [{
+                    date: '2016-05-02'
+                }, {
+                    date: '2016-05-04'
+                }]
+            }
         }
     }]
 }

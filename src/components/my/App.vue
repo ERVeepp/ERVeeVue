@@ -12,11 +12,11 @@ import Vuex from 'vuex'
 //加载vuex
 Vue.use(Vuex)
 //调用element-ui模块
-import Element from 'element-ui'
+//import Element from 'element-ui'
 //加载element动画样式
-import 'element-ui/lib/theme-default/index.css'
+//import 'element-ui/lib/theme-default/index.css'
 //加载element
-Vue.use(Element)
+//Vue.use(Element)
 //引入store
 import store from '../../store'
 //console.log(store)
@@ -28,8 +28,8 @@ import myslidebar from './components/slidebar.vue'
 import mybanner from './components/banner.vue'
 import myfooter from './components/footer.vue'
 import home from './components/home.vue'
-import sign from './components/sign.vue'
-import register from './components/register.vue'
+//import sign from './components/sign.vue'
+//import register from './components/register.vue'
 import a from './components/a.vue'
 import b from './components/b.vue'
 import c from './components/c.vue'
@@ -90,12 +90,13 @@ const router = new VueRouter({
         	body:g
         }
     },
-    {
+    /*{
         path: '/register',
         components:{
           body:register
         }
-    }]
+    }*/
+    ]
 })
 
 new Vue({

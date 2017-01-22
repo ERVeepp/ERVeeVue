@@ -1,13 +1,6 @@
 <template lang="html">
 	<div>
-		<el-table :data="contents.con.tableData" border style="width: 100%">
-			<el-table-column prop="date" label="日期" width="180">
-			</el-table-column>
-			<el-table-column prop="name" label="姓名" width="180">
-			</el-table-column>
-			<el-table-column prop="address" label="地址">
-			</el-table-column>
-		</el-table>
+		我是页面a
 	</div>
 </template>
 
@@ -27,6 +20,6 @@ import { mapGetters } from 'vuex'
 	}
 </script>
 
-<style lang="css">
+<style lang="scss">
 
 </style>
