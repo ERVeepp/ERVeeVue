@@ -25,9 +25,9 @@ html{
     & body{
         scroll-behavior: smooth;
         font:{
-            size:1.4rem;
+            size:1.2rem;
             //family:Microsoft Yahei;
-            family:"Helvetica Neue";
+            family:Arial;
         };
         margin:0;
         background: $bgcolor;
@@ -65,13 +65,6 @@ a{
 .ib{
     display: inline-block;
     margin:0 auto;
-}
-//浮动
-.fl{
-    float:left;
-}
-.fr{
-    float:right;
 }
 //字体颜色
 .cf{
@@ -117,17 +110,6 @@ a{
 }
 @include clearfix(".clearfix");
 //flex
-.flex-column{
-    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox; /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Chrome */
-    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    justify-content:center;
-    align-items: center;
-    flex-direction:column;
-    flex-wrap: wrap;
-}
 @mixin flex($selector) {
     .flex-#{$selector}{
         display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
@@ -135,24 +117,27 @@ a{
         display: -ms-flexbox; /* TWEENER - IE 10 */
         display: -webkit-flex; /* NEW - Chrome */
         display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    	justify-content:#{$selector};
+    	justify-content:center;
     	align-items: center;
-    	flex-direction:row;
+    	flex-direction:#{$selector};
     	flex-wrap: wrap;
     }
 }
-@include flex("flex-start");
-@include flex("center");
-@include flex("flex-end");
-//text
-@mixin text($selector) {
-    .text-#{$selector}{
-        text-align:#{$selector};
-    }
+@include flex("row");
+@include flex("column");
+.jc-start{
+    justify-content:flex-start;
 }
-@include text("center");
-@include text("left");
-@include text("right");
+.jc-end{
+    justify-content:flex-end;
+}
+.ai-start{
+    align-items: flex-start;
+}
+.ai-end{
+    align-items: flex-end;
+}
+//字体加粗
 .text-blod{
     font-weight: bold;
 }
@@ -164,32 +149,12 @@ a{
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-@for $i from 1 through 100 {
-    //fz-x-px
-    .fz-#{$i}px {
-        font-size:#{$i}px;
-    }
-    //fz-x-em
-    .fz-#{$i}em {
-        font-size:#{$i}em;
-    }
-    //fz-x-rem
-    .fz-#{$i}rem {
-        font-size:#{$i}rem;
-    }
-    //p-x-px
-    .p-#{$i}px {
-        padding:#{$i}px;
-    }
-    //p-x-em
-    .p-#{$i}em {
-        padding:#{$i}em;
-    }
-    //p-x-em
-    .p-#{$i}rem {
-        padding:#{$i}rem;
-    }
+//浮动
+.fl{
+    float:left !important;
+}
+.fr{
+    float:right !important;
 }
 //container
 .container{
@@ -203,139 +168,115 @@ a{
       	content: "我是清除浮动";
     }
 }
-//宽度
-@for $i from 1 through $size {
-    .col-auto-#{$i}{
-        width:(100%/$size)*$i;
-        min-height:1px;
-        margin:0 auto;
-    }
-
-    @media (min-width:$size-l) {
-        .col-xl-#{$i}{
+//宽度函数
+@mixin col($selector) {
+    @for $i from 1 through $size {
+        .col-#{$selector}-#{$i}{
             width:(100%/$size)*$i !important;
             min-height:1px;
             margin:0 auto;
-        }
-        .col-xl-text-center{
-            text-align: center !important;
-        }
-    }
-
-    @media (max-width:$size-l) {
-        .col-l-#{$i}{
-            width:(100%/$size)*$i !important;
-            min-height:1px;
-            margin:0 auto;
-        }
-        .col-l-text-center{
-            text-align: center !important;
-        }
-    }
-
-    @media (max-width:$size-m) {
-        .col-m-#{$i}{
-            width:(100%/$size)*$i !important;
-            min-height:1px;
-            margin:0 auto;
-        }
-        .col-m-text-center{
-            text-align: center !important;
-        }
-    }
-
-    @media (max-width:$size-s) {
-        .col-s-#{$i}{
-            width:(100%/$size)*$i !important;
-            min-height:1px;
-            margin:0 auto;
-        }
-        .col-s-text-center{
-            text-align: center !important;
-        }
-    }
-
-    @media (max-width:$size-ss) {
-        .col-ss-#{$i}{
-            width:(100%/$size)*$i !important;
-            min-height:1px;
-            margin:0 auto;
-        }
-        .col-ss-text-center{
-            text-align: center !important;
-        }
-    }
-
-}
-//高度
-@for $i from 0 through $height {
-    .h-auto-#{$i}{
-        height:$i*1%;
-    }
-    @media (min-width:$size-l) {
-        .h-xl-#{$i}{
-            height:$i*1% !important;
-        }
-    }
-    @media (max-width:$size-l) {
-        .h-l-#{$i}{
-            height:$i*1% !important;
-        }
-    }
-    @media (max-width:$size-m) {
-        .h-m-#{$i}{
-            height:$i*1% !important;
-        }
-    }
-    @media (max-width:$size-s) {
-        .h-s-#{$i}{
-            height:$i*1% !important;
-        }
-    }
-    @media (max-width:$size-ss) {
-        .h-ss-#{$i}{
-            height:$i*1% !important;
         }
     }
 }
+@include col("auto");
+//高度函数
+@mixin h($selector) {
+    @for $i from 1 through $height {
+        .h-#{$selector}-#{$i}{
+            height:$i*1% !important;
+            min-width:1px;
+            margin:0 auto;
+        }
+    }
+}
+@include h("auto");
 //显示隐藏
-.col-auto-hide{
-    display: none;
+@mixin show($selector) {
+    .col-#{$selector}-show{
+        display: block;
+    }
 }
-.col-auto-show{
-    display: block;
+@include show("auto");
+@mixin hide($selector) {
+    .col-#{$selector}-hide{
+        display: none;
+    }
 }
+@include hide("auto");
+//text
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+@mixin text($selector) {
+    .text-#{$selector}-center{
+        text-align: center !important;
+    }
+    .text-#{$selector}-left{
+        text-align: left !important;
+    }
+    .text-#{$selector}-right{
+        text-align: right !important;
+    }
+}
+@include text("auto");
+//scale
+@mixin scale($selector) {
+    @for $i from 1 through 10 {
+        .scale-#{$selector}-#{$i}{
+            -webkit-transform: scale($i/10);
+            -moz-transform: scale($i/10);
+            -ms-transform: scale($i/10);
+            -o-transform: scale($i/10);
+            transform: scale($i/10);
+        }
+    }
+}
+//
 @media (min-width:$size-l) {
-    .col-xl-hide{
-        display: none;
-    }
-    .col-xl-show{
-        display: block;
-    }
+    @include col("xl");
+    @include h("xl");
+    @include show("xl");
+    @include hide("xl");
+    @include scale("xl");
+    @include text("xl");
 }
-@media (min-width:$size-m) and (max-width:$size-l) {
-    .col-l-hide{
-        display: none;
-    }
-    .col-l-show{
-        display: block;
-    }
+@media (max-width:$size-l) {
+    @include col("l");
+    @include h("l");
+    @include show("l");
+    @include hide("l");
+    @include scale("l");
+    @include text("l");
 }
-@media (min-width:$size-s) and (max-width:$size-m) {
-    .col-m-hide{
-        display: none;
-    }
-    .col-m-show{
-        display: block;
-    }
+@media (max-width:$size-m) {
+    @include col("m");
+    @include h("m");
+    @include show("m");
+    @include hide("m");
+    @include scale("m");
+    @include text("m");
 }
 @media (max-width:$size-s) {
-    .col-s-hide{
-        display: none;
-    }
-    .col-s-show{
-        display: block;
-    }
+    @include col("s");
+    @include h("s");
+    @include show("s");
+    @include hide("s");
+    @include scale("s");
+    @include text("s");
+}
+@media (max-width:$size-ss) {
+    @include col("ss");
+    @include h("ss");
+    @include show("ss");
+    @include hide("ss");
+    @include scale("ss");
+    @include text("ss");
 }
 //自定义滚动条
 @mixin scrollbar($selector) {
@@ -371,58 +312,3 @@ a{
     }
 }
 @include scrollbar("html");
-//改变大小
-@for $i from 1 through 10 {
-    .scale-auto-#{$i}{
-        -webkit-transform: scale($i/10);
-        -moz-transform: scale($i/10);
-        -ms-transform: scale($i/10);
-        -o-transform: scale($i/10);
-        transform: scale($i/10);
-    }
-    @media (min-width:$size-l) {
-        .scale-xl-#{$i}{
-            -webkit-transform: scale($i/10);
-            -moz-transform: scale($i/10);
-            -ms-transform: scale($i/10);
-            -o-transform: scale($i/10);
-            transform: scale($i/10);
-        }
-    }
-    @media (min-width:$size-m) and (max-width:$size-l) {
-        .scale-l-#{$i}{
-            -webkit-transform: scale($i/10);
-            -moz-transform: scale($i/10);
-            -ms-transform: scale($i/10);
-            -o-transform: scale($i/10);
-            transform: scale($i/10);
-        }
-    }
-    @media (min-width:$size-s) and (max-width:$size-m) {
-        .scale-m-#{$i}{
-            -webkit-transform: scale($i/10);
-            -moz-transform: scale($i/10);
-            -ms-transform: scale($i/10);
-            -o-transform: scale($i/10);
-            transform: scale($i/10);
-        }
-    }
-    @media (max-width:$size-s) {
-        .scale-s-#{$i}{
-            -webkit-transform: scale($i/10);
-            -moz-transform: scale($i/10);
-            -ms-transform: scale($i/10);
-            -o-transform: scale($i/10);
-            transform: scale($i/10);
-        }
-    }
-    @media (max-width:$size-ss) {
-        .scale-ss-#{$i}{
-            -webkit-transform: scale($i/10) !important;
-            -moz-transform: scale($i/10) !important;
-            -ms-transform: scale($i/10) !important;
-            -o-transform: scale($i/10) !important;
-            transform: scale($i/10) !important;
-        }
-    }
-}
