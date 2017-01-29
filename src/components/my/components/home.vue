@@ -1,6 +1,10 @@
 <template lang="html">
-    <div>
-    	我是首页
+    <div class="container">
+        <div class="col-auto-20">
+            <div class="title text-center" v-text="contents.title"></div>
+            <div class="content ti" v-text="contents.con.a.a"></div>
+            <div class="content ti" v-text="contents.con.a.b"></div>
+        </div>
     </div>
 </template>
 
@@ -18,5 +22,6 @@ export default{
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+
 </style>

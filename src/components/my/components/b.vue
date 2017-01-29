@@ -1,8 +1,10 @@
 <template lang="html">
-    <div>
-      <ul>
-        <li>{{contents}}</li>
-      </ul>
+    <div class="container">
+        <div class="col-auto-20">
+            <div class="title text-center" v-text="contents.title"></div>
+            <div class="" v-text="contents.con.c.a"></div>
+            <div class="" v-text="contents.con.c.b"></div>
+        </div>
     </div>
 </template>
 <script>
@@ -19,5 +21,5 @@ export default{
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 </style>

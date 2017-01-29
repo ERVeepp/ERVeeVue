@@ -1,8 +1,19 @@
 <template lang="html">
-    <div>
-        我是页面3
+    <div class="container">
+        <div class="col-auto-20">
+            <div class="title text-center" v-text="contents.title"></div>
+            <div class="" v-text="contents.con.d.a"></div>
+            <div class="clearfix" v-for="(item,index) in contents.con.d.b">
+				<div class="fl">{{item.a}}</div>
+                <div class="fl">
+                    <div class="clearfix" v-for="(i,index) in item.b">
+                        <div class="fl c-a">{{i.a}}</div>
+                        <div class="fl">{{i.b}}</div>
+                    </div>
+                </div>
+			</div>
+        </div>
     </div>
-
 </template>
 
 <script>
@@ -20,18 +31,22 @@ export default {
         ])
     },
     mounted: function() {
-        axios.post('http://localhost:3000/my', {
+        /*axios.post('http://localhost:3000/my', {
 
-            })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        }
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });*/
+    }
 }
 </script>
 
 <style lang="scss">
+.c-a{
+    width:150px;
+    min-height:1px;
+}
 </style>

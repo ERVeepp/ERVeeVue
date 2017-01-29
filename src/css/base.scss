@@ -98,6 +98,9 @@ a{
     -ms-user-select:none;
     user-select:none;
 }
+.ti{
+    text-indent: 2em;
+}
 //clearfix
 @mixin clearfix($selector) {
     #{$selector}:after {

@@ -1,12 +1,22 @@
 <template lang="html">
-	<div class="nav container">
-		<div class="col-auto-3 fl navbtn">
-			<router-link to="/">{{contents.nav.home}}</router-link>
-			<div class="navbtnborder"></div>
-		</div>
-		<div class="col-auto-3 fl navbtn">
-			<router-link to="/a">{{contents.nav.a}}</router-link>
-			<div class="navbtnborder"></div>
+	<div class="nav">
+		<div class="col-auto-20 container">
+			<div class="col-auto-6 fl navbtn">
+				<router-link to="/" v-text="contents.nav.home"></router-link>
+				<div class="navbtnborder"></div>
+			</div>
+			<div class="col-auto-6 fl navbtn">
+				<router-link to="/a" v-text="contents.nav.a"></router-link>
+				<div class="navbtnborder"></div>
+			</div>
+			<div class="col-auto-6 fl navbtn">
+				<router-link to="/b" v-text="contents.nav.b"></router-link>
+				<div class="navbtnborder"></div>
+			</div>
+			<div class="col-auto-6 fl navbtn">
+				<router-link to="/c" v-text="contents.nav.c"></router-link>
+				<div class="navbtnborder"></div>
+			</div>
 		</div>
 	</div>
 </template>

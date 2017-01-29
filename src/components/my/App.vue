@@ -28,15 +28,9 @@ import myslidebar from './components/slidebar.vue'
 import mybanner from './components/banner.vue'
 import myfooter from './components/footer.vue'
 import home from './components/home.vue'
-//import sign from './components/sign.vue'
-//import register from './components/register.vue'
 import a from './components/a.vue'
 import b from './components/b.vue'
 import c from './components/c.vue'
-import d from './components/d.vue'
-import e from './components/e.vue'
-import f from './components/f.vue'
-import g from './components/g.vue'
 //
 const router = new VueRouter({
     mode: 'history',
@@ -65,38 +59,7 @@ const router = new VueRouter({
         components:{
         	body:c
         }
-    },
-    {
-        path: '/d',
-        components:{
-        	body:d
-        }
-    },
-    {
-        path: '/e',
-        components:{
-        	body:e
-        }
-    },
-    {
-        path: '/f',
-        components:{
-        	body:f
-        }
-    },
-    {
-        path: '/g',
-        components:{
-        	body:g
-        }
-    },
-    /*{
-        path: '/register',
-        components:{
-          body:register
-        }
-    }*/
-    ]
+    }]
 })
 
 new Vue({
@@ -119,14 +82,23 @@ new Vue({
         myfooter
     },
     mounted:function(){
-        //读取localstorage，假如没值的话,赋值为0，即默认中文
-        let lang=localStorage.getItem("lang")
-        if(!lang){
-            localStorage.setItem("lang","0")
+        //读取localstorage，假如没值的话,赋值为0，即默认英文
+        let lang=parseInt(localStorage.getItem("lang"))
+        if(lang){
+            Vue.set(this.$store.state,'choicelang',lang)
+        }else{
+            let thislang=this.$store.state.choicelang
+            localStorage.setItem("lang",thislang)
         }
     }
 })
 </script>
 <style lang="scss">
-
+.body{
+    background: #fff;
+    padding:2rem 0;
+}
+.title{
+    font-size: 2rem;
+}
 </style>
