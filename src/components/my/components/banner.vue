@@ -6,6 +6,9 @@
 				@click="changelang($event,item,index)"
 			>{{item.lang}}</span>
 		</div>
+		<div class="bannerimgbox">
+			<img src="../../../img/index.jpg" alt="">
+		</div>
 	</div>
 </template>
 <script>
@@ -45,12 +48,13 @@ export default{
 }
 
 </script>
-<style>
+<style lang="scss">
 	.banner{
 		width:100%;
-		height:100px;
+		height:300px;
 		background:#20A0FF;
 		position: relative;
+		overflow: hidden;
 	}
 	.langcheckbox{
 		position: absolute;
@@ -61,8 +65,18 @@ export default{
 		padding:0 5px;
 		cursor: pointer;
 		color:#fff;
+		&:hover{
+			color:#000 !important;
+		}
 	}
 	.langcheck:hover{
 		color:#666;
+	}
+	.bannerimgbox{
+		line-height: 0;
+		img{
+			width:100%;
+			height:auto;
+		}
 	}
 </style>

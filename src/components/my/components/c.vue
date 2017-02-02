@@ -46,7 +46,7 @@ export default {
 
 <style lang="scss">
 .c-a{
-    width:150px;
+    width:250px;
     min-height:1px;
 }
 </style>

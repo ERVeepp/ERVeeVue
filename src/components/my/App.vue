@@ -96,9 +96,10 @@ new Vue({
 <style lang="scss">
 .body{
     background: #fff;
-    padding:2rem 0;
+    font-size: 1.6rem;
 }
 .title{
     font-size: 2rem;
+    padding:2rem 0;
 }
 </style>
