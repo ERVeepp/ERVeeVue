@@ -1,5 +1,6 @@
 <template lang="html">
 	<div class="banner">
+		<canvas id="cas" class="bannermask"></canvas>
 		<div class="langcheckbox">
 			<span class="langcheck usnone"
 				v-for="(item,index) in state.contents"
@@ -12,6 +13,9 @@
 	</div>
 </template>
 <script>
+import lizi from '../../../js/lizi.js';
+console.log(lizi)
+//lizi()
 import { mapGetters , mapActions } from 'vuex'
 export default{
   	computed: {
@@ -44,6 +48,9 @@ export default{
             //手动向父组件触发事件
             //this.$emit('submitlang',[e,item,index])
 		}
+	},
+	mounted:function(){
+
 	}
 }
 
