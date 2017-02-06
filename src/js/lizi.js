@@ -20,9 +20,11 @@ let lizi=function(){
     var warea = {x: null, y: null, max: 20000};
     window.onmousemove = function(e){
         e = e || window.event;
-
+        var canvastop=canvas.offsetTop
+        var scrolltop=window.pageYOffset|| document.documentElement.scrollTop || document.body.scrollTop
         warea.x = e.clientX;
-        warea.y = e.clientY;
+        warea.y = e.clientY-(canvastop-scrolltop)
+
     };
     window.onmouseout = function(e){
         warea.x = null;
