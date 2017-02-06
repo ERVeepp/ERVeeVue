@@ -1,7 +1,6 @@
 <template lang="html">
 	<div class="banner">
-		<canvas id="cas" class="bannermask"></canvas>
-		<!--<theater v-bind:choicelang="state.choicelang" v-bind:contents="contents" ></theater>-->
+		<!--<canvas id="cas" class="bannermask"></canvas>-->
 		<div class="langcheckbox">
 			<span class="langcheck usnone"
 				v-for="(item,index) in state.contents"
@@ -9,6 +8,7 @@
 			>{{item.lang}}</span>
 		</div>
 		<div class="bannerimgbox">
+			<theater v-bind:choicelang="state.choicelang" v-bind:contents="contents" ></theater>
 			<img src="../../../img/index.jpg" alt="">
 		</div>
 	</div>
@@ -16,8 +16,7 @@
 <script>
 import theater from './theater.vue'
 import lizi from '../../../js/lizi.js';
-console.log(lizi)
-//lizi()
+
 import { mapGetters , mapActions } from 'vuex'
 export default{
   	computed: {
@@ -28,6 +27,9 @@ export default{
             'contents'
         ])
   	},
+	components:{
+        theater
+    },
 	methods:{
 		/*...mapActions({
 			add: 'increment'
@@ -52,7 +54,7 @@ export default{
 		}
 	},
 	mounted:function(){
-
+		//lizi.lizi()
 	}
 }
 

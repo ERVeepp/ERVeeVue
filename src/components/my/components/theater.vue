@@ -45,7 +45,7 @@ export default {
                 }
             )
             //
-            var text=vm.contents.con.one.d
+            var text=vm.contents.title
             theater.addScene('context:'+text,function(){
                 vm.flage=true
             })
