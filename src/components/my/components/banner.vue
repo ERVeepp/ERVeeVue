@@ -1,6 +1,7 @@
 <template lang="html">
 	<div class="banner">
 		<canvas id="cas" class="bannermask"></canvas>
+		<!--<theater v-bind:choicelang="state.choicelang" v-bind:contents="contents" ></theater>-->
 		<div class="langcheckbox">
 			<span class="langcheck usnone"
 				v-for="(item,index) in state.contents"
@@ -13,6 +14,7 @@
 	</div>
 </template>
 <script>
+import theater from './theater.vue'
 import lizi from '../../../js/lizi.js';
 console.log(lizi)
 //lizi()
