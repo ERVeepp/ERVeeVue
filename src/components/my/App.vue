@@ -83,7 +83,7 @@ new Vue({
     },
     mounted:function(){
         //读取localstorage，假如没值的话,赋值为0，即默认英文
-        let lang=parseInt(localStorage.getItem("lang"))
+        let lang=localStorage.getItem("lang")
         if(lang){
             Vue.set(this.$store.state,'choicelang',lang)
         }else{

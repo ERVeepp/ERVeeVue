@@ -55,9 +55,12 @@ export default {
         }
     },
     mounted:function(){
+        //console.log(this.choicelang)
         var vm=this
-        let lang=localStorage.getItem("lang")
-        vm.theater()
+        var lang=localStorage.getItem("lang")
+        if(!lang){
+            vm.theater()
+        }
     },
     watch:{
         choicelang:function(){
@@ -68,7 +71,7 @@ export default {
                 vm.theater(function(firsttext){
                     //console.log(firsttext)
                     //最后一次获取到的数据
-                    var lasttext=vm.contents.con.one.d
+                    var lasttext=vm.contents.title
                     //console.log(lasttext)
                     //比较前后两次数据，看是否需要再一次执行动画
                     if(firsttext!=lasttext){

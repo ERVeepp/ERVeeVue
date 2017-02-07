@@ -1,15 +1,14 @@
 <template lang="html">
 	<div class="banner">
-		<!--<canvas id="cas" class="bannermask"></canvas>-->
 		<div class="langcheckbox">
 			<span class="langcheck usnone"
 				v-for="(item,index) in state.contents"
 				@click="changelang($event,item,index)"
 			>{{item.lang}}</span>
 		</div>
-		<div class="bannerimgbox">
-			<theater v-bind:choicelang="state.choicelang" v-bind:contents="contents" ></theater>
-			<img src="../../../img/index.jpg" alt="">
+		<div class="bannerimgbox bgimg flex-row text-center">
+			<!--<canvas id="cas" class="bannermask"></canvas>-->
+			<theater v-bind:choicelang="state.choicelang" v-bind:contents="contents" class="theater"></theater>
 		</div>
 	</div>
 </template>
@@ -84,10 +83,11 @@ export default{
 		color:#666;
 	}
 	.bannerimgbox{
-		line-height: 0;
-		img{
-			width:100%;
-			height:auto;
-		}
+		background-image: url(../../../img/index.jpg);
+		width:100%;
+		height:100%;
+	}
+	.theater{
+		color:#fff;
 	}
 </style>
