@@ -11,7 +11,7 @@ export default {
     },
     props: ['choicelang','contents'],
     methods:{
-        theater:function(){
+        theater:function(callback){
             var vm=this
             vm.flage=false
             /* global theaterJS */
@@ -45,24 +45,36 @@ export default {
                 }
             )
             //
-            var text=vm.contents.title
-            theater.addScene('context:'+text,function(){
+            var firsttext=vm.contents.title
+            theater.addScene('context:'+firsttext,function(){
                 vm.flage=true
+                if(callback){
+                    callback(firsttext)
+                }
             })
         }
     },
     mounted:function(){
         var vm=this
         let lang=localStorage.getItem("lang")
-        if(!lang){
-            vm.theater()
-        }
+        vm.theater()
     },
     watch:{
         choicelang:function(){
+            //console.log(this.choicelang)
             var vm=this
+            //开关状态打开才能再执行动画
             if(vm.flage){
-                vm.theater()
+                vm.theater(function(firsttext){
+                    //console.log(firsttext)
+                    //最后一次获取到的数据
+                    var lasttext=vm.contents.con.one.d
+                    //console.log(lasttext)
+                    //比较前后两次数据，看是否需要再一次执行动画
+                    if(firsttext!=lasttext){
+                        vm.theater()
+                    }
+                })
             }
         }
     }
