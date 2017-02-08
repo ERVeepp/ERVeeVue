@@ -14,9 +14,9 @@ export default{
 	methods:{
 
 	}
-}	
+}
 </script>
-<style>
+<style lang="scss" scoped>
 	.slidebar{
 		width:50%;
 		height:100%;

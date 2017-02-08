@@ -82,6 +82,12 @@ new Vue({
         myfooter
     },
     mounted:function(){
+        console.info(
+        "去我的github\n" +
+        "查看更多 https://github.com/ERVeepp/ERVeeVue \n" +
+        "王伟 \n" +
+        "2017.02.08"
+      );
         //读取localstorage，假如没值的话,赋值为0，即默认英文
         let lang=localStorage.getItem("lang")
         if(lang){
@@ -97,9 +103,13 @@ new Vue({
 .body{
     background: #fff;
     font-size: 1.6rem;
+    padding:2rem 0;
 }
 .title{
     font-size: 2rem;
-    padding:2rem 0;
+    padding:0 0 2rem 0;
+}
+.p-box{
+    padding:1rem 0;
 }
 </style>

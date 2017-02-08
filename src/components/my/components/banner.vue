@@ -8,7 +8,7 @@
 		</div>
 		<div class="bannerimgbox bgimg flex-row text-center">
 			<!--<canvas id="cas" class="bannermask"></canvas>-->
-			<theater v-bind:choicelang="state.choicelang" v-bind:contents="contents" class="theater"></theater>
+			<theater v-bind:choicelang="state.choicelang" v-bind:contents="contents" class="theater col-auto-22"></theater>
 		</div>
 	</div>
 </template>
@@ -58,7 +58,7 @@ export default{
 }
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 	.banner{
 		width:100%;
 		height:300px;

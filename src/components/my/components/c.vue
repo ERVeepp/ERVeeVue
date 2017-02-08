@@ -2,16 +2,20 @@
     <div class="container">
         <div class="col-auto-20">
             <div class="title text-center" v-text="contents.title"></div>
-            <div class="" v-text="contents.con.d.a"></div>
+            <div class="text-blod p-box" v-text="contents.con.d.a"></div>
             <div class="clearfix" v-for="(item,index) in contents.con.d.b">
-				<div class="fl">{{item.a}}</div>
-                <div class="fl">
+				<div class="text-blod">{{item.a}}</div>
+                <div class="p-box">
                     <div class="clearfix" v-for="(i,index) in item.b">
                         <div class="fl c-a">{{i.a}}</div>
                         <div class="fl">{{i.b}}</div>
                     </div>
                 </div>
 			</div>
+            <div class="p-box" v-text="contents.con.d.c"></div>
+            <div class="text-blod">
+                <a href="" v-text="contents.con.d.d"></a>
+            </div>
         </div>
     </div>
 </template>
@@ -44,7 +48,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-a{
     width:250px;
     min-height:1px;

@@ -45,12 +45,12 @@ export default {
                 }
             )
             //
-            var firsttext=vm.contents.title
+            var firsttext=vm.contents.dec
             theater.addScene('context:'+firsttext,function(){
                 vm.flage=true
                 //console.log(firsttext)
                 //最后一次获取到的数据
-                var lasttext=vm.contents.title
+                var lasttext=vm.contents.dec
                 //console.log(lasttext)
                 //比较前后两次数据，看是否需要再一次执行动画
                 if(firsttext!=lasttext){
@@ -80,15 +80,15 @@ export default {
 }
 </script>
 
-<style media="screen">
+<style lang="scss" scoped>
     #context{
-        font-size: 40px;
+        font-size: 36px;
     }
     /*制作光标*/
     #context:after {
         content: "";
-        width: 6px;
-        height: 46px;
+        width: 4px;
+        height: 40px;
         vertical-align: -8px;
         margin-left: 5px;
         background-color: #fff;

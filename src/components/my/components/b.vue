@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col-auto-20">
             <div class="title text-center" v-text="contents.title"></div>
-            <div class="" v-text="contents.con.c.a"></div>
+            <div class="text-blod p-box" v-text="contents.con.c.a"></div>
             <div class="" v-text="contents.con.c.b"></div>
         </div>
     </div>
@@ -21,5 +21,5 @@ export default{
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>
