@@ -68,16 +68,19 @@ export default {
             var vm=this
             //开关状态打开才能再执行动画
             if(vm.flage){
-                vm.theater(function(firsttext){
-                    //console.log(firsttext)
-                    //最后一次获取到的数据
-                    var lasttext=vm.contents.title
-                    //console.log(lasttext)
-                    //比较前后两次数据，看是否需要再一次执行动画
-                    if(firsttext!=lasttext){
-                        vm.theater()
-                    }
-                })
+                function theater(){
+                    vm.theater(function(firsttext){
+                        //console.log(firsttext)
+                        //最后一次获取到的数据
+                        var lasttext=vm.contents.con.one.d
+                        //console.log(lasttext)
+                        //比较前后两次数据，看是否需要再一次执行动画
+                        if(firsttext!=lasttext){
+                            theater()
+                        }
+                    })
+                }
+                theater()
             }
         }
     }
