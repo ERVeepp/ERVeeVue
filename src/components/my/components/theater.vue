@@ -11,7 +11,7 @@ export default {
     },
     props: ['choicelang','contents'],
     methods:{
-        theater:function(callback){
+        theater:function(){
             var vm=this
             vm.flage=false
             /* global theaterJS */
@@ -48,8 +48,13 @@ export default {
             var firsttext=vm.contents.title
             theater.addScene('context:'+firsttext,function(){
                 vm.flage=true
-                if(callback){
-                    callback(firsttext)
+                //console.log(firsttext)
+                //最后一次获取到的数据
+                var lasttext=vm.contents.title
+                //console.log(lasttext)
+                //比较前后两次数据，看是否需要再一次执行动画
+                if(firsttext!=lasttext){
+                    vm.theater()
                 }
             })
         }
@@ -68,19 +73,7 @@ export default {
             var vm=this
             //开关状态打开才能再执行动画
             if(vm.flage){
-                function theater(){
-                    vm.theater(function(firsttext){
-                        //console.log(firsttext)
-                        //最后一次获取到的数据
-                        var lasttext=vm.contents.con.one.d
-                        //console.log(lasttext)
-                        //比较前后两次数据，看是否需要再一次执行动画
-                        if(firsttext!=lasttext){
-                            theater()
-                        }
-                    })
-                }
-                theater()
+                vm.theater()
             }
         }
     }
