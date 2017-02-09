@@ -83,10 +83,8 @@ new Vue({
     },
     mounted:function(){
         console.info(
-        "去我的github\n" +
-        "查看更多 https://github.com/ERVeepp/ERVeeVue \n" +
-        "王伟 \n" +
-        "2017.02.08"
+        "去我的github查看更多 https://github.com/ERVeepp/ERVeeVue \n" +
+        "王伟"
       );
         //读取localstorage，假如没值的话,赋值为0，即默认英文
         let lang=localStorage.getItem("lang")
