@@ -82,10 +82,18 @@ new Vue({
         myfooter
     },
     mounted:function(){
+        //处理banner图
+        this.setwindowheight=function(){
+            let windowh=window.innerHeight
+            var banner=document.getElementsByClassName("banner")[0]
+            console.log(banner)
+            banner.style.height=(windowh/2)+"px"
+        }
+        this.setwindowheight()
         console.info(
-        "去我的github查看更多 https://github.com/ERVeepp/ERVeeVue \n" +
-        "王伟"
-      );
+            "去我的github查看更多 https://github.com/ERVeepp/ERVeeVue \n" +
+            "王伟"
+        )
         //读取localstorage，假如没值的话,赋值为0，即默认英文
         let lang=localStorage.getItem("lang")
         if(lang){

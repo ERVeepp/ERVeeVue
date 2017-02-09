@@ -61,7 +61,7 @@ export default{
 <style lang="scss" scoped>
 	.banner{
 		width:100%;
-		height:300px;
+		height:auto;
 		background:#20A0FF;
 		position: relative;
 		overflow: hidden;
