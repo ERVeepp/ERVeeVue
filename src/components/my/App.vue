@@ -33,7 +33,7 @@ import b from './components/b.vue'
 import c from './components/c.vue'
 //
 const router = new VueRouter({
-    mode: 'history',
+    //mode: 'history',
     base: __dirname,
     routes: [{
         path: '/',
