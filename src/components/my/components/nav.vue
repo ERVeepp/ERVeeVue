@@ -1,22 +1,22 @@
 <template lang="html">
 	<div class="nav">
 		<div class="col-auto-20 container">
-			<div class="col-auto-6 fl navbtn">
-				<router-link to="/" v-text="contents.nav.home"></router-link>
+			<router-link to="/" class="col-auto-6 fl navbtn">
+				<div class="" v-text="contents.nav.home"></div>
 				<div class="navbtnborder"></div>
-			</div>
-			<div class="col-auto-6 fl navbtn">
-				<router-link to="/a" v-text="contents.nav.a"></router-link>
+			</router-link>
+			<router-link to="/a" class="col-auto-6 fl navbtn">
+				<div class="" v-text="contents.nav.a"></div>
 				<div class="navbtnborder"></div>
-			</div>
-			<div class="col-auto-6 fl navbtn">
-				<router-link to="/b" v-text="contents.nav.b"></router-link>
+			</router-link>
+			<router-link to="/b" class="col-auto-6 fl navbtn">
+				<div class="" v-text="contents.nav.b"></div>
 				<div class="navbtnborder"></div>
-			</div>
-			<div class="col-auto-6 fl navbtn">
-				<router-link to="/c" v-text="contents.nav.c"></router-link>
+			</router-link>
+			<router-link to="/c" class="col-auto-6 fl navbtn">
+				<div class="" v-text="contents.nav.c"></div>
 				<div class="navbtnborder"></div>
-			</div>
+			</router-link>
 		</div>
 	</div>
 </template>
@@ -40,10 +40,9 @@ export default {
 		text-align: center;
 		overflow: hidden;
 		.navbtn{
-			& a{
-				display: block;
-				padding:1rem 0;
-			}
+			display: block;
+			height:40px;
+			line-height: 38px;
 			&:after{
 				content: "";
 				display: block;

@@ -70,6 +70,7 @@ export default{
 		position: absolute;
 		right:0;
 		top:0;
+		padding:0.5rem;
 	}
 	.langcheck{
 		padding:0 5px;
