@@ -4,6 +4,7 @@
             <div class="title text-center" v-text="contents.title"></div>
             <div class="content ti" v-text="contents.con.a.a"></div>
             <div class="content ti" v-text="contents.con.a.b"></div>
+            <div class="content ti" v-text="contents.con.a.c"></div>
         </div>
     </div>
 </template>

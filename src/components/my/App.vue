@@ -86,7 +86,6 @@ new Vue({
         this.setwindowheight=function(){
             let windowh=window.innerHeight
             var banner=document.getElementsByClassName("banner")[0]
-            console.log(banner)
             banner.style.height=(windowh/2)+"px"
         }
         this.setwindowheight()

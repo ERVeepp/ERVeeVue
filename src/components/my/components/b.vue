@@ -3,7 +3,8 @@
         <div class="col-auto-20">
             <div class="title text-center" v-text="contents.title"></div>
             <div class="text-blod p-box" v-text="contents.con.c.a"></div>
-            <div class="" v-text="contents.con.c.b"></div>
+            <div class="ti" v-text="contents.con.c.b"></div>
+            <div class="ti" v-text="contents.con.c.c"></div>
         </div>
     </div>
 </template>
