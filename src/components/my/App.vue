@@ -71,7 +71,9 @@ new Vue({
         <mybanner></mybanner>
         <mynav></mynav>
         <myslidebar></myslidebar>
-        <router-view class="view body" name="body"></router-view>
+        <transition name="fade">
+            <router-view class="view body" name="body"></router-view>
+        </transition>
         <myfooter></myfooter>
 	</div>
   	`,
@@ -105,6 +107,12 @@ new Vue({
 })
 </script>
 <style lang="scss">
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
 .body{
     background: #fff;
     font-size: 1.6rem;
