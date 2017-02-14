@@ -49,7 +49,7 @@ export default{
 			//store.commit('increment')
 			this.increment(item.id)
             //手动向父组件触发事件
-            //this.$emit('submitlang',[e,item,index])
+            this.$emit('submitlang',[e,item,index])
 		}
 	},
 	mounted:function(){

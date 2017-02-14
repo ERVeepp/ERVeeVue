@@ -61,14 +61,13 @@ const router = new VueRouter({
         }
     }]
 })
-
 new Vue({
     el:'#app',
     store,
   	router,
   	template:`
   	<div id="app">
-        <mybanner></mybanner>
+        <mybanner v-on:submitlang="changelang"></mybanner>
         <mynav></mynav>
         <myslidebar></myslidebar>
         <transition name="fade">
@@ -102,6 +101,30 @@ new Vue({
         }else{
             let thislang=this.$store.state.choicelang
             localStorage.setItem("lang",thislang)
+        }
+        let thislang=localStorage.getItem("lang")
+        this.judelang(thislang)
+    },
+    methods:{
+        changelang:function(arr){
+            this.judelang(arr[2])
+        },
+        judelang:function(obj){
+            //console.log(obj)
+            if(obj==0){
+                //说明是英语
+                var ti=document.querySelectorAll(".ti")
+                //console.log(ti)
+                for (var i = 0; i < ti.length; i++) {
+                    ti[i].style.textIndent="1em"
+                }
+            }else if(obj==1){
+                //说明是汉语
+                var ti=document.querySelectorAll("ti")
+                for (var i = 0; i < ti.length; i++) {
+                    ti[i].style.textIndent="2em"
+                }
+            }
         }
     }
 })
