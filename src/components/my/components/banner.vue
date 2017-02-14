@@ -71,6 +71,7 @@ export default{
 		right:0;
 		top:0;
 		padding:0.5rem;
+		font-size: 1.4rem;
 	}
 	.langcheck{
 		padding:0 5px;

@@ -82,7 +82,7 @@ export default {
 
 <style lang="scss" scoped>
     #context{
-        font-size: 36px;
+        font-size: 28px;
     }
     /*制作光标*/
     #context:after {

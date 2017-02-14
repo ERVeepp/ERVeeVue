@@ -43,18 +43,16 @@ export default {
 			display: block;
 			height:40px;
 			line-height: 38px;
-			&:after{
-				content: "";
-				display: block;
-				margin:0 auto;
-				width:100%;
-				height:3px;
-			}
 			&:hover{
-				&:after{
-					background:#20A0FF;
-				}
+				background: #fff;
+			}
+			.navbtnborder{
+				width:100%;
+				height:2px;
+				background: #20A0FF;
+				opacity: 0;
 			}
 		}
+
 	}
 </style>

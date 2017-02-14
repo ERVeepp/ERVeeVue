@@ -61,11 +61,27 @@ const router = new VueRouter({
         }
     }]
 })
-router.beforeEach((to, from, next) => {
-    console.log(to)
-    next()
-})
-new Vue({
+//
+var index=0
+function judepath(callback){
+    var that=this
+    router.beforeEach((to, from, next) => {
+        var href=to.path.split("/")[1]
+        if(href==""){
+            index=0
+        }else if(href=="a"){
+            index=1
+        }else if(href=="b"){
+            index=2
+        }else if(href=="c"){
+            index=3
+        }
+        next()
+    })
+}
+judepath()
+//
+const vm=new Vue({
     el:'#app',
     store,
   	router,
@@ -87,42 +103,55 @@ new Vue({
         myfooter
     },
     mounted:function(){
-        //处理banner图
-        this.setwindowheight=function(){
-            let windowh=window.innerHeight
-            var banner=document.getElementsByClassName("banner")[0]
-            banner.style.height=(windowh/2)+"px"
-        }
-        this.setwindowheight()
         console.info(
             "去我的github查看更多 https://github.com/ERVeepp/ERVeeVue \n" +
             "王伟"
         )
-        //读取localstorage，假如没值的话,赋值为0，即默认英文
-        let lang=localStorage.getItem("lang")
-        if(lang){
-            Vue.set(this.$store.state,'choicelang',lang)
-        }else{
-            let thislang=this.$store.state.choicelang
-            localStorage.setItem("lang",thislang)
-        }
-        let thislang=localStorage.getItem("lang")
-        this.judelang(thislang)
+        //调用判断banner图高度方法
+        this.setwindowheight()
+        //判断当前语言
+        this.judelang()
+        //判断路由
+        this.judepath()
+    },
+    watch:{
+
     },
     methods:{
+        judepath:function(){
+            var nav=document.querySelectorAll(".navbtnborder")
+            for (var i = 0; i < nav.length; i++) {
+                nav[i].style.opacity=0
+            }
+            nav[index].style.opacity=1
+        },
         changelang:function(arr){
             this.judelang(arr[2])
         },
-        judelang:function(obj){
+        setwindowheight:function(){
+            let windowh=window.innerHeight
+            var banner=document.getElementsByClassName("banner")[0]
+            banner.style.height=(windowh/2)+"px"
+        },
+        judelang:function(){
+            //读取localstorage，假如没值的话,赋值为0，即默认英文
+            let lang=localStorage.getItem("lang")
+            if(lang){
+                Vue.set(this.$store.state,'choicelang',lang)
+            }else{
+                let thislang=this.$store.state.choicelang
+                localStorage.setItem("lang",thislang)
+            }
+            let thislang=localStorage.getItem("lang")
             //console.log(obj)
-            if(obj==0){
+            if(thislang==0){
                 //说明是英语
                 var ti=document.querySelectorAll(".ti")
                 //console.log(ti)
                 for (var i = 0; i < ti.length; i++) {
                     ti[i].style.textIndent="1em"
                 }
-            }else if(obj==1){
+            }else if(thislang==1){
                 //说明是汉语
                 var ti=document.querySelectorAll("ti")
                 for (var i = 0; i < ti.length; i++) {
@@ -132,6 +161,7 @@ new Vue({
         }
     }
 })
+//
 </script>
 <style lang="scss">
 .fade-enter-active, .fade-leave-active {
