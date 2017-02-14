@@ -1,12 +1,14 @@
 <template lang="html">
-    <div class="container">
-        <div class="col-auto-20">
-            <div class="title text-center" v-text="contents.title"></div>
-            <div class="content ti" v-text="contents.con.a.a"></div>
-            <div class="content ti" v-text="contents.con.a.b"></div>
-            <div class="content ti" v-text="contents.con.a.c"></div>
+    <transition name="slide">
+        <div class="container">
+            <div class="col-auto-20">
+                <div class="title text-center" v-text="contents.title"></div>
+                <div class="content ti" v-text="contents.con.a.a"></div>
+                <div class="content ti" v-text="contents.con.a.b"></div>
+                <div class="content ti" v-text="contents.con.a.c"></div>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
