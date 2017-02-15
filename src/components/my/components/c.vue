@@ -15,7 +15,8 @@
     			</div>
                 <div class="p-box" v-text="contents.con.d.c"></div>
                 <div class="text-blod">
-                    <a href="../Receipt.doc" v-text="contents.con.d.d"></a>
+                    <a href="../ReceiptCH.doc" v-if="lang==1" v-text="contents.con.d.d"></a>
+                    <a href="../ReceiptEN.doc" v-if="lang==0" v-text="contents.con.d.d"></a>
                 </div>
             </div>
         </div>
