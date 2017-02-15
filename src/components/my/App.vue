@@ -62,19 +62,19 @@ const router = new VueRouter({
     }]
 })
 //
-var index=0
+var firstindex=0
 function judepath(callback){
     var that=this
     router.beforeEach((to, from, next) => {
         var href=to.path.split("/")[1]
         if(href==""){
-            index=0
+            firstindex=0
         }else if(href=="a"){
-            index=1
+            firstindex=1
         }else if(href=="b"){
-            index=2
+            firstindex=2
         }else if(href=="c"){
-            index=3
+            firstindex=3
         }
         next()
     })
@@ -111,7 +111,9 @@ const vm=new Vue({
         this.setwindowheight()
         //判断当前语言
         this.judelang()
-        //判断路由
+        //判断初始路由
+        this.judefirstpath()
+        //判断改变路由
         this.judepath()
     },
     watch:{
@@ -119,6 +121,26 @@ const vm=new Vue({
     },
     methods:{
         judepath:function(){
+            router.beforeEach((to, from, next) => {
+                var href=to.path.split("/")[1]
+                var thisindex
+                if(href==""){
+                    thisindex=0
+                }else if(href=="a"){
+                    thisindex=1
+                }else if(href=="b"){
+                    thisindex=2
+                }else if(href=="c"){
+                    thisindex=3
+                }
+                next()
+                this.changecss(thisindex)
+            })
+        },
+        judefirstpath:function(){
+            this.changecss(firstindex)
+        },
+        changecss:function(index){
             var nav=document.querySelectorAll(".navbtnborder")
             for (var i = 0; i < nav.length; i++) {
                 nav[i].style.opacity=0
