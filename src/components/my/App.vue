@@ -121,6 +121,7 @@ const vm=new Vue({
     },
     methods:{
         judepath:function(){
+            var that=this
             router.beforeEach((to, from, next) => {
                 var href=to.path.split("/")[1]
                 var thisindex
@@ -134,13 +135,14 @@ const vm=new Vue({
                     thisindex=3
                 }
                 next()
-                this.changecss(thisindex)
+                that.changecss(thisindex)
             })
         },
         judefirstpath:function(){
             this.changecss(firstindex)
         },
         changecss:function(index){
+            //改变导航栏下划线
             var nav=document.querySelectorAll(".navbtnborder")
             for (var i = 0; i < nav.length; i++) {
                 nav[i].style.opacity=0
@@ -163,22 +165,6 @@ const vm=new Vue({
             }else{
                 let thislang=this.$store.state.choicelang
                 localStorage.setItem("lang",thislang)
-            }
-            let thislang=localStorage.getItem("lang")
-            console.log(thislang)
-            if(thislang==0){
-                //说明是英语
-                var ti=document.querySelectorAll(".ti")
-                //console.log(ti)
-                for (var i = 0; i < ti.length; i++) {
-                    ti[i].style.textIndent="1em"
-                }
-            }else if(thislang==1){
-                //说明是汉语
-                var ti=document.querySelectorAll(".ti")
-                for (var i = 0; i < ti.length; i++) {
-                    ti[i].style.textIndent="2em"
-                }
             }
         }
     }
@@ -203,5 +189,13 @@ const vm=new Vue({
 }
 .p-box{
     padding:1rem 0;
+}
+
+.ti0{
+    text-indent: 1em;
+}
+
+.ti1{
+    text-indent: 2em;
 }
 </style>

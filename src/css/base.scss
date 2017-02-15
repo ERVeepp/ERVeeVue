@@ -2,7 +2,7 @@
 //背景颜色
 $bgcolor:#efefef;
 //行高
-$baseLineHeight:1.4 !default;
+$baseLineHeight:2.6rem !default;
 //字体颜色
 $color:#313131;
 //栅格个数
@@ -29,6 +29,7 @@ html{
             //family:Microsoft Yahei;
             family:Arial;
         };
+        letter-spacing:0px;
         margin:0;
         background: $bgcolor;
         line-height: $baseLineHeight;
@@ -97,9 +98,6 @@ a{
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
-}
-.ti{
-    text-indent: 1em;
 }
 //clearfix
 @mixin clearfix($selector) {

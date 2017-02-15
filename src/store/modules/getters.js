@@ -6,3 +6,6 @@ export const contents = state => {
         }
     }
 }
+export const lang = state => {
+    return state.choicelang
+}

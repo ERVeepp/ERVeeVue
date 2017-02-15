@@ -4,8 +4,8 @@
             <div class="col-auto-20">
                 <div class="title text-center" v-text="contents.title"></div>
                 <div class="text-blod p-box" v-text="contents.con.c.a"></div>
-                <div class="ti" v-text="contents.con.c.b"></div>
-                <div class="ti" v-text="contents.con.c.c"></div>
+                <div class="" v-bind:class="{ti0:lang==0,ti1:lang==1}" v-text="contents.con.c.b"></div>
+                <div class="" v-bind:class="{ti0:lang==0,ti1:lang==1}" v-text="contents.con.c.c"></div>
             </div>
         </div>
     </transition>
@@ -18,7 +18,8 @@ export default{
     },
     computed: {
         ...mapGetters([
-            'contents'
+            'contents',
+            'lang'
         ])
     }
 }

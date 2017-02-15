@@ -82,15 +82,16 @@ export default {
 
 <style lang="scss" scoped>
     #context{
-        font-size: 28px;
+        font-size: 34px;
+        line-height: 46px;
     }
     /*制作光标*/
     #context:after {
         content: "";
         width: 4px;
-        height: 28px;
+        height: 32px;
         vertical-align: -5px;
-        margin-left: 0;
+        margin-left: 5px;
         background-color: #fff;
         display: inline-block;
         animation: blink .4s infinite alternate;

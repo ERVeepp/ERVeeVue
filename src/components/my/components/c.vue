@@ -4,7 +4,7 @@
             <div class="col-auto-20">
                 <div class="title text-center" v-text="contents.title"></div>
                 <div class="text-blod p-box" v-text="contents.con.d.a"></div>
-                <div class="clearfix" v-for="(item,index) in contents.con.d.b">
+                <div class="clearfix" v-bind:class="{ti0:lang==0,ti1:lang==1}" v-for="(item,index) in contents.con.d.b">
     				<div class="text-blod">{{item.a}}</div>
                     <div class="p-box">
                         <div class="clearfix" v-for="(i,index) in item.b">
@@ -15,7 +15,7 @@
     			</div>
                 <div class="p-box" v-text="contents.con.d.c"></div>
                 <div class="text-blod">
-                    <a href="" v-text="contents.con.d.d"></a>
+                    <a href="../Receipt.doc" v-text="contents.con.d.d"></a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,8 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'contents'
+            'contents',
+            'lang'
         ])
     },
     mounted: function() {
