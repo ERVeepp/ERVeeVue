@@ -165,7 +165,7 @@ const vm=new Vue({
                 localStorage.setItem("lang",thislang)
             }
             let thislang=localStorage.getItem("lang")
-            //console.log(obj)
+            console.log(thislang)
             if(thislang==0){
                 //说明是英语
                 var ti=document.querySelectorAll(".ti")
@@ -175,7 +175,7 @@ const vm=new Vue({
                 }
             }else if(thislang==1){
                 //说明是汉语
-                var ti=document.querySelectorAll("ti")
+                var ti=document.querySelectorAll(".ti")
                 for (var i = 0; i < ti.length; i++) {
                     ti[i].style.textIndent="2em"
                 }

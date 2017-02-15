@@ -88,9 +88,9 @@ export default {
     #context:after {
         content: "";
         width: 4px;
-        height: 40px;
-        vertical-align: -8px;
-        margin-left: 5px;
+        height: 28px;
+        vertical-align: -5px;
+        margin-left: 0;
         background-color: #fff;
         display: inline-block;
         animation: blink .4s infinite alternate;
