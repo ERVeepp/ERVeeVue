@@ -7,9 +7,9 @@
                 <div class="clearfix" v-bind:class="{ti0:lang==0,ti1:lang==1}" v-for="(item,index) in contents.con.d.b">
     				<div class="text-blod">{{item.a}}</div>
                     <div class="p-box">
-                        <div class="clearfix" v-for="(i,index) in item.b">
-                            <div class="fl c-a">{{i.a}}</div>
-                            <div class="fl">{{i.b}}</div>
+                        <div class="clearfix container" v-for="(i,index) in item.b">
+                            <div class="fl col-auto-12 col-s-24">{{i.a}}</div>
+                            <div class="fl col-auto-12 col-s-24">{{i.b}}</div>
                         </div>
                     </div>
     			</div>
@@ -21,7 +21,6 @@
         </div>
     </transition>
 </template>
-
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
@@ -50,10 +49,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-.c-a{
-    width:250px;
-    min-height:1px;
-}
-</style>

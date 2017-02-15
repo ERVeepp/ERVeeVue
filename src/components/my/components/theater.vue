@@ -89,8 +89,8 @@ export default {
     #context:after {
         content: "";
         width: 4px;
-        height: 32px;
-        vertical-align: -5px;
+        height: 40px;
+        vertical-align: -8px;
         margin-left: 5px;
         background-color: #fff;
         display: inline-block;

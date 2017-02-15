@@ -93,7 +93,7 @@ export default{
                             },
                             {
                                 a:" ",
-                                b:"Email：ydbest@126.com"
+                                b:"Email: jyc369834669@163.com"
                             }
                         ]
                     }
@@ -195,7 +195,7 @@ export default{
                             },
                             {
                                 a:" ",
-                                b:"Email：jyc369834669@163.com"
+                                b:"Email: jyc369834669@163.com"
                             }
                         ]
                     }
