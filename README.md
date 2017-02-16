@@ -5,8 +5,11 @@
 ## Build Setup
 
 ``` bash
+# install yarn
+npm install yarn -g
+
 # install dependencies
-npm install
+yarn
 
 # serve with hot reload at localhost:8080
 npm run dev
