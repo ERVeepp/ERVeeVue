@@ -13,9 +13,8 @@ export default{
         dec:"Second Workshop on cold Rydberg atoms and molecules",
         con:{
             a:{
-                a:"In recent years, we have witnessed an interdisciplinary development on the physics of ultracold Rydberg atoms. Rydberg atoms, highly excited atoms, having the long coherence times and strong interactions, provide unique opportunities for applications in quantum information science and nonlinear optics, as well as the precisely field measurements. This workshop will provide a chance to bring together leading experts in these fields to discuss latest results and identify new challenges for theory and experiment of Rydberg physics. ",
-                b:"By the joint efforts of Northeast Normal University, Shanxi University and the University of Nottingham in the United Kingdom, The first Workshop on cold Rydberg atoms and molecules has been held in August 2016 12-15 in Jilin province Changchun city.",
-                c:"The second Workshop on cold Rydberg atoms and molecules, organized by Shanxi University, will be held in Shanxi University in August 2017."
+                a:"In recent years, we have witnessed the rapid development on the physics of ultracold Rydberg atoms. Due to their long coherence time and strong inter-particle interactions, cold gases of Rydberg atoms are important not only in the study of fundamental physics such as many-body dynamics, but also find applications in quantum information science and quantum nonlinear optics, as well as precision measurements of weak fields. This workshop will provide a chance to bring together leading experts in this field to discuss latest results and identify new theoretical and experimental challenges in Rydberg physics.",
+                b:"The first Workshop on cold Rydberg atoms and molecules has been held in August 2016 in Changchun, Jilin, jointly organized by the Northeast Normal University, Shanxi University and the University of Nottingham. The second Workshop in this series will take place in Shangxi University, Taiyuan in August 2017."
             },
             b:{
                 a:{
@@ -116,7 +115,7 @@ export default{
         dec:"第二届《里德堡原子和分子学术研讨会》",
         con:{
             a:{
-                a:"《里德堡原子和分子学术研讨会》的目的是增进国内该领域的学术交流和各研究团队的相互沟通，促进里德堡原子分子研究的发展和人才培养，扩大在国际同行中的影响。由东北师范大学、山西大学和英国诺丁汉大学3家单位的共同努力已于2016年8月12-15日在吉林省长春市成功举办了第一届《里德堡原子和分子学术研讨会》。第二届《里德堡原子和分子学术研讨会》由山西大学承办，将于2017年8月在山西大学举行。会议将以大会特邀报告和张贴报告等形式交流。",
+                a:"里德堡原子和分子物理研究在量子光学，多体物理和等离子体等领域，特别是在量子信息和量子计算方面以及弱电场的精密测量等研究领域具有重要科学意义和潜在的应用前景，已成为国际前沿热点。为了增进国内该领域的学术交流和各研究团队的相互沟通，促进里德堡原子分子研究的发展和人才培养，扩大在国际同行中的影响，由东北师范大学、山西大学和英国诺丁汉大学3家单位的共同努力下在2016年8月在吉林省长春市成功举办了第一届《里德堡原子和分子学术研讨会》。延续第一次会议的成功，由山西大学承办的第二届《里德堡原子和分子学术研讨会》将于2017年8月在太原举行。",
                 b:"里德堡原子和分子研究在等离子体和多体物理等领域，特别是在量子信息和量子计算方面以及微波场的测量等研究领域具有重要科学意义和潜在的应用前景，已成为国际前沿热点。本次会议内容将涵盖里德堡原子和分子物理研究、与之密切相关的量子光学和量子信息研究和基于里德堡原子的精密测量等。我们建议报告人一方面阐述自己的近期工作，另一方面介绍国际上的最新理论和实验进展。为了促进报告人和参会人员的互动，达到充分交流的目的，我们鼓励报告过程中和报告结束后的自由提问。另外，会议还设有Poster Session，鼓励参会的老师和同学提供海报介绍自己的近期工作。我们热忱欢迎国内和国际同行莅临指导！",
                 c:""
             },
@@ -126,7 +125,7 @@ export default{
                     b:[
                         {
                             a:"会议时间：",
-                            b:"2017年8月12日至8月14日"
+                            b:"2017年8月12日-14日"
                         },
                         {
                             a:"会议地点：",
