@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="footer">
-    	我是footer
+    	版权所有 Copyright(C)2013 山西大学 激光光谱研究所
     </div>
 </template>
 <script>
