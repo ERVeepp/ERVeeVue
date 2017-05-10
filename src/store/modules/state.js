@@ -60,7 +60,7 @@ export default{
             },
             c:{
                 a:"Register",
-                b:"The deadline: the abstract is sent to email address: jyc369834669@163.com before 1st June, 2017.",
+                b:"The deadline: the abstract is sent to email address: jyc369834669@163.com before 1st July, 2017.",
                 c:"For further information please also e-mail to: jyc369834669@163.com."
             },
             d:{
@@ -88,7 +88,7 @@ export default{
                         b:[
                             {
                                 a:"Yuechun Jiao (Shanxi University)",
-                                b:"Tel: 135 4645 9394"
+                                b:"Tel: +86 135 4645 9394"
                             },
                             {
                                 a:" ",
@@ -190,7 +190,7 @@ export default{
                         b:[
                             {
                                 a:"焦月春",
-                                b:"电话：135 4645 9394"
+                                b:"电话：+86 135 4645 9394"
                             },
                             {
                                 a:" ",
