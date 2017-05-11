@@ -14,10 +14,6 @@
                     </div>
     			</div>
                 <div class="p-box" v-text="contents.con.d.c"></div>
-                <div class="text-blod">
-                    <a href="./word/ReceiptCH.doc" v-if="lang==1" v-text="contents.con.d.d"></a>
-                    <a href="./word/ReceiptEN.doc" v-if="lang==0" v-text="contents.con.d.d"></a>
-                </div>
             </div>
         </div>
     </transition>

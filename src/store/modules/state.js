@@ -46,22 +46,23 @@ export default{
                         c:"Travel Information:",
                         d:"By plane:",
                         e:[
-                            "A. It is 10.6km from airport to Hotel. You can take 30min by using a bus No. 201 from airport to Taiyuan South Railway Station and No. 849 to Xuefu part station.",
-                            "B. You can take 15-20min by taxis. A one way ride to hotel is about 20-30 RMB."
+                            "It is 10.6km from airport to Hotel. You can take 20-30min by taxis. A one way ride to hotel is about 30 RMB. ",
+                            ""
                         ],
                         f:"By Train:",
                         g:[
                             "You can take train to Taiyuan easily.",
-                            "A. Taiyuan south station: it is 5.4km from Taiyuan south station to JinXue Yuan Hotel. You can take the public bus No. 849 to the Xuefu part station, or take taxis to hotel costing about 8-12 RMB.",
-                            "B. Taiyuan train station: it is 8.3km from Taiyuan train station to JinXue Yuan Hotel. You can take the public bus No.861 to Wucheng Lu Xuefujie Kou and walk ~1km along Xuefu street. Or by taxi to Hotel costing about 15-20RMB."
+                            "A. Taiyuan south station: It is 5.4km from Taiyuan south station to JinXue Yuan Hotel. You can take taxis to hotel costing about 15 RMB.",
+                            "B. Taiyuan train station: It is 8.3km from Taiyuan train station to JinXue Yuan Hotel. You can take taxi to Hotel costing about 15 RMB."
                         ],
                     }
                 }
             },
             c:{
                 a:"Register",
-                b:"The deadline: the abstract is sent to email address: jyc369834669@163.com before 1st July, 2017.",
-                c:"For further information please also e-mail to: jyc369834669@163.com."
+                b:"The deadline: the receipt is sent to email address: jyc369834669@163.com before 1st July, 2017.",
+                c:"For further information please also e-mail to: jyc369834669@163.com.",
+                d:"Click to download a single receipt"
             },
             d:{
                 a:"Contact",
@@ -97,8 +98,7 @@ export default{
                         ]
                     }
                 ],
-                c:"",
-                d:"Click to download a single receipt"
+                c:""
             }
         }
 
@@ -163,7 +163,8 @@ export default{
             c:{
                 a:"三、会议注册",
                 b:"提交摘要截止日期：请准备参会的代表将摘要以及回执发送邮箱：jyc369834669@163.com。 截止时间 2017年6月1日。",
-                c:"8月12日上午10:00–晚上20:00，会务组工作人员将在山西省太原市晋学苑一楼大厅，迎候各位参会人员，办理注册手续。教师注册费为800元/人, 研究生注册费为500元/人。（只收现金，不能刷卡）。"
+                c:"8月12日上午10:00–晚上20:00，会务组工作人员将在山西省太原市晋学苑一楼大厅，迎候各位参会人员，办理注册手续。教师注册费为800元/人, 研究生注册费为500元/人。（只收现金，不能刷卡）。",
+                d:"点击下载回执单"
             },
             d:{
                 a:"四、会议联系",
@@ -199,8 +200,7 @@ export default{
                         ]
                     }
                 ],
-                c:"",
-                d:"点击下载回执单"
+                c:""
             }
         }
     }]

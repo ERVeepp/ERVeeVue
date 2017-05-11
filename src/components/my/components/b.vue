@@ -6,6 +6,10 @@
                 <div class="text-blod p-box" v-text="contents.con.c.a"></div>
                 <div class="" v-bind:class="{ti0:lang==0,ti1:lang==1}" v-text="contents.con.c.b"></div>
                 <div class="" v-bind:class="{ti0:lang==0,ti1:lang==1}" v-text="contents.con.c.c"></div>
+                <div class="text-blod download-box">
+                    <a href="./word/ReceiptCH.doc" v-if="lang==1" v-text="contents.con.c.d"></a>
+                    <a href="./word/ReceiptEN.doc" v-if="lang==0" v-text="contents.con.c.d"></a>
+                </div>
             </div>
         </div>
     </transition>
@@ -26,4 +30,11 @@ export default{
 </script>
 
 <style lang="scss" scoped>
+  .download-box{
+    margin-top:2rem;
+    a{
+      text-decoration: underline;
+      color:red;
+    }
+  }
 </style>
