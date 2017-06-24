@@ -46,14 +46,17 @@ export default{
                         c:"Travel Information:",
                         d:"By plane:",
                         e:[
-                            "It is 10.6km from airport to Hotel. You can take 20-30min by taxis. A one way ride to hotel is about 30 RMB. ",
+                            "Please fly to Taiyuan Wusu International airport. The airport is 10.6 km from the JinXue Yuan Hotel and it is 20-30 min by a taxi. A one-way ride cost is about 30 RMB.",
                             ""
                         ],
                         f:"By Train:",
                         g:[
-                            "You can take train to Taiyuan easily.",
+                            "There are train connections between Taiyuan and other major cities. Train information can be found through http://english.ctrip.com/.",
+                            "The fast trains are gao-tie (high speed train), which are labelled by a letter 'G' followed by a number. From Beijing West station, you can choose G601, G603,… till G623. From Shanghai Hongqiao station, you can choose G1952 and G1956. All these trains arrive at Taiyuan South station. There are also less fast trains, starting with letter 'D' with a number or letter 'Z' with a number.",
+                            "There are two train stations in Taiyuan.",
                             "A. Taiyuan south station: It is 5.4km from Taiyuan south station to JinXue Yuan Hotel. You can take taxis to hotel costing about 15 RMB.",
-                            "B. Taiyuan train station: It is 8.3km from Taiyuan train station to JinXue Yuan Hotel. You can take taxi to Hotel costing about 15 RMB."
+                            "B. Taiyuan train station: It is 8.3km from Taiyuan train station to JinXue Yuan Hotel. You can take taxi to Hotel costing about 15 RMB.",
+                            "If you have doubts on how to book an train ticket, we could help you once you send us your flight information. Please bear in mind that you will have to change to the train station from your landing airport (I.e. Beijing or Shanghai). You can do this by taking a taxi, bus or underground trains. Normally this journey will take 1-2 hours depending where you arrive and which transport you will take. Let us know if you need help on the local transport."
                         ],
                     }
                 }
