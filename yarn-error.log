@@ -1,17 +1,17 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ERVee\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  /usr/local/bin/node /usr/local/bin/yarn
 
 PATH: 
-  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\nodejs\;C:\Users\ERVee\AppData\Local\Microsoft\WindowsApps;C:\Users\ERVee\AppData\Local\atom\bin;C:\Users\ERVee\AppData\Roaming\npm
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
-  0.24.5
+  0.23.4
 
 Node version: 
   8.1.2
 
 Platform: 
-  win32 x64
+  darwin x64
 
 npm manifest: 
   {
@@ -39,8 +39,10 @@ npm manifest:
       "css-loader": "^0.25.0",
       "element-ui": "^1.1.2",
       "file-loader": "^0.9.0",
-      "node-sass": "^4.1.1",
+      "node-sass": "^4.5.3",
+      "sass": "^1.0.0-beta.1",
       "sass-loader": "^4.1.1",
+      "scss": "^0.2.4",
       "style-loader": "^0.13.1",
       "theaterjs": "^3.1.0",
       "vue-cli": "^2.7.0",
@@ -5582,7 +5584,4 @@ Lockfile:
       fd-slicer "~1.0.1"
 
 Trace: 
-  Error: connect ETIMEDOUT 104.16.63.173:443
-      at Object.exports._errnoException (util.js:1016:11)
-      at exports._exceptionWithHostPort (util.js:1039:20)
-      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1138:14)
+  Error: EACCES: permission denied, mkdir '/Users/yeahmobi/Desktop/project/ERVeeVue/node_modules/tar-pack/node_modules/debug'
