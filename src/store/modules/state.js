@@ -42,15 +42,19 @@ export default {
           b: {
             a: '',
             b: '',
-            c: 'Travel Information:',
-            d: 'To China:',
-            e: 'By plane:',
-            f: [
+            c: 'Travel Information',
+            d: 'To China',
+            e: [
+              'In most of countries, there are direct flights to Beijing (Beijing Capital International Airport) and Shanghai (Shanghai Pudong International Airport). There might be direct flights to other cities (such as Guangzhou and Chongqing). Among them, Beijing is the closest city to Taiyuan.',
+              'After arriving at one of these cities, you can get to Taiyuan by changing to another flight or taking trains to Taiyuan. Flight and train tickets and prices can be found at http://english.ctrip.com/'
+            ],
+            f: 'By Plane',
+            g: [
               'Please fly to Taiyuan Wusu International airport. The airport is 10.6 km from the JinXue Yuan Hotel and it is 20-30 min by a taxi. A one-way ride cost is about 30 RMB.',
               ''
             ],
-            g: 'By Train:',
-            h: [
+            h: 'By Train',
+            i: [
               'There are train connections between Taiyuan and other major cities. Train information can be found through http://english.ctrip.com/.',
               'The fast trains are gao-tie (high speed train), which are labelled by a letter "G" followed by a number. From Beijing West station, you can choose G601, G603,… till G623. From Shanghai Hongqiao station, you can choose G1952 and G1956. All these trains arrive at Taiyuan South station. There are also less fast trains, starting with letter "D" with a number or letter "Z" with a number.',
               'There are two train stations in Taiyuan.',
@@ -146,13 +150,14 @@ export default {
             b: '太原市晋学苑',
             c: '2、交通：',
             d: '',
-            e: '（1）乘火车到达太原南站或太原站',
-            f: [
+            e: [],
+            f: '（1）乘火车到达太原南站或太原站',
+            g: [
               'A：太原南站到晋学苑：全程5.4公里，打车约10分钟，费用8-12元。或者坐公交849到学府公园站，投币1元。',
               'B：太原站到晋学苑：距离约8.3公里，打车15-20分钟，费用15-20元。或者坐公交861到坞城路学府街口，投币1元。'
             ],
-            g: '（2）乘飞机到达太原武宿机场',
-            h: [
+            h: '（2）乘飞机到达太原武宿机场',
+            i: [
               'A：坐公交201路约17分钟，投币1元，到太原南站下车，换乘849到学府街学府公园站，投币1元。',
               'B：打车到晋学苑，全程10.6公里，打车15-20分钟，费用20-30元。'
             ]
