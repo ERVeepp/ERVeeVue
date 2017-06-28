@@ -46,7 +46,7 @@ export default {
             d: 'To China',
             e: [
               'In most of countries, there are direct flights to Beijing (Beijing Capital International Airport) and Shanghai (Shanghai Pudong International Airport). There might be direct flights to other cities (such as Guangzhou and Chongqing). Among them, Beijing is the closest city to Taiyuan.',
-              'After arriving at one of these cities, you can get to Taiyuan by changing to another flight or taking trains to Taiyuan. Flight and train tickets and prices can be found at http://english.ctrip.com/'
+              'After arriving at one of these cities, you can get to Taiyuan by changing to another flight or taking trains to Taiyuan. Flight and train tickets and prices can be found at http://english.ctrip.com/.'
             ],
             f: 'By Plane',
             g: [
